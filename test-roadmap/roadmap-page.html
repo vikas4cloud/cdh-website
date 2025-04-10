@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud and DevOps Course Roadmap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+    /* roadmap.css */
+
+/* Dark theme styles */
+body {
+    font-family: 'Montserrat' , sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.content-section {
+  margin-left: 0;
+  text-align: center;
+  padding: 40px;
+}
+
+.content-section h1 {
+ font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.content-section p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.join-community {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  background-color: #1d1b1b;; /* Adjust background color as needed */
+  border: solid 2px #555;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.join-community .container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.join-community .icon {
+  flex: 0 0 auto;
+  margin-right: 1rem; /* Adjust spacing between icon and text */
+}
+
+.join-community .icon img {
+  width: 100px; /* Adjust size of the icon */
+  height: 100px; /* Adjust size of the icon */
+  margin: 5px;
+}
+
+.join-community .text-content {
+  flex: 1;
+}
+
+.join-community h2 {
+background: linear-gradient(90deg, #D866F6, #9F06FF);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  margin: 0;
+  font-size: 1.5rem; /* Adjust heading size */
+}
+
+.join-community p {
+  margin: 0.5rem 0 1rem;
+  font-size: 1rem; /* Adjust font size */
+  color: #666; /* Adjust text color */
+}
+
+.join-community .cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #9F06FF; /* Button background color */
+  color: #fff; /* Button text color */
+  text-decoration: none;
+  border-radius: 5px; /* Rounded corners */
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Montserrat, sans-serif;
+  cursor: pointer;
+  animation: colorChange 5s infinite; /* Apply animation */
+}
+
+
+@keyframes colorChange {
+  0% {
+    background-color: #9d00fe;
+  }
+  25% {
+    background-color: #d103ff; 
+  }
+  50% {
+    background-color: #9d00fe;
+  }
+  75% {
+    background-color: #d103ff; /* Gold */
+  }
+  100% {
+    background-color: #9d00fe; /* Back to Green */
+  }
+}
+
+.cta-button:hover {
+    background-color: #5b00ab;
+    animation: none;
+    transform: translateY(-3px); /* Subtle hover lift */
+}
+
+
+.toggle-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    background: #1f1f1f; /* Slightly lighter background for the toggle */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow */
+}
+
+.toggle-container label {
+    margin-right: 10px;
+    color: #e0e0e0; /* Light text for the label */
+}
+
+.roadmap-container {
+    width: 80%;
+    max-width: 1200px;
+    background-color: #1e1e1e; /* Dark background for container */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow */
+    position: relative;
+    border: 2px solid #8c00ff; /* Subtle border */
+}
+
+h1 {
+    background: linear-gradient(90deg, #D866F6, #9F06FF);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.progress {
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    height: 12px; /* Slightly thicker progress bar */
+    background-color: #9F06FF; /* Purple color */
+    border-radius: 6px;
+    transition: width 0.5s ease; /* Smooth transition */
+}
+
+.progress-percent {
+    color: #e0e0e0; /* Light text for percentage */
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.modules-container {
+    padding: 20px;
+    position: relative;
+}
+
+.accordion-container {
+    position: relative;
+}
+
+.accordion {
+    background-color: #1e1e1e; /* Dark background for modules */
+    border: 1px solid #333; /* Darker border */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    padding-left: 50px; /* Space for circle */
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.accordion-header {
+    
+    background-color: #9F06FF;
+    color: white;
+    border: none;
+    padding: 12px 24px; /* Adjust padding for better button size */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-top: 20px; /* Increase margin for spacing */
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    /* animation: colorChange 5s infinite; Apply animation */
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    text-align: left;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+@keyframes colorChange {
+    0% {
+      background-color: #9d00fe;
+    }
+    25% {
+      background-color: #d103ff; 
+    }
+    50% {
+      background-color: #9d00fe;
+    }
+    75% {
+      background-color: #d103ff; /* Gold */
+    }
+    100% {
+      background-color: #9d00fe; /* Back to Green */
+    }
+  }
+  
+
+.accordion-header:hover {
+    background-color: #d500f9; /* Slightly darker purple on hover */
+    transform: scale(1.02); /* Slight zoom effect */
+    animation: none;
+}
+
+.accordion-content {
+    padding: 15px;
+    display: none;
+    overflow: hidden;
+    background-color: #2c2c2c; /* Darker background for content */
+    border-top: 2px solid #333; /* Darker border */
+}
+
+.accordion-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.day-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.day-item .circle {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #d500f9; /* Purple color */
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.day-item input[type="checkbox"]:checked + label .circle {
+    background-color: #d500f9;
+}
+
+.day-item label {
+    color: #e0e0e0; /* Light text */
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+/* Hide checkboxes from viewers */
+body.viewer .topic-checkbox {
+    display: none;
+}
+
+/* Highlight the module circle if all days are completed */
+.accordion-content li input[type="checkbox"]:checked ~ label .circle {
+    background-color: #d500f9;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.accordion-content {
+    animation: slideIn 0.3s ease;
+}
+
+    </style>
+</head>
+
+<body class="admin"> <!-- Change to 'viewer' for viewer mode -->
+
+    <!-- Admin/Viewer Toggle Button -->
+    <!-- <div class="toggle-container">
+        <label for="mode-toggle">Admin Mode</label>
+        <input type="checkbox" id="mode-toggle" checked> <!-- Checked for admin mode, uncheck for viewer mode -->
+    <!-- </div>  -->
+    <section class="content-section">
+        <h1>Multi Cloud with AWS + DevOps Online Training</h1>
+        <p>This is a short description that provides more context or information about the heading above.</p>
+    </section>
+    <section class="join-community">
+        <div class="container">
+          <div class="icon">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/047/632/707/small/realistic-office-moments-illustration-concepts-vector.jpg" alt="Community Icon" />
+          </div>
+          <div class="text-content">
+            <h2>Join Our Community</h2>
+            <p>Be a part of something great. Connect with like-minded individuals and stay updated with the latest news and events.</p>
+            <a href="#" class="cta-button">Join Now</a>
+          </div>
+        </div>
+      </section>      
+    <div class="roadmap-container">
+        <h1>Cloud and DevOps Course Roadmap (51 Days)</h1>
+        <div class="progress">
+            <div class="progress-bar" id="progress-bar"></div>
+            <span id="progress-percent">0%</span>
+        </div>
+
+        <!-- Accordion for Modules -->
+        <div class="modules-container">
+            <div class="module-line"></div>
+            <div class="branch-lines">
+                <!-- Branch lines will be added dynamically if needed -->
+            </div>
+            <div class="accordion-container">
+                <div class="accordion">
+                    <button class="accordion-header">Module 1: Introduction</button>
+                    <div class="accordion-content">
+                        <ul>
+                            <!-- Days for Module 1 -->
+                            <li>
+                                <div class="day-item">
+                                    <input type="checkbox" class="topic-checkbox" id="day1">
+                                    <label for="day1">
+                                        <div class="circle"></div>
+                                        Day 1: Introduction to Cloud Computing
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="day-item">
+                                    <input type="checkbox" class="topic-checkbox" id="day2">
+                                    <label for="day2">
+                                        <div class="circle"></div>
+                                        Day 2: Cloud Service Models
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Repeat for other modules -->
+                <div class="accordion">
+                    <button class="accordion-header">Module 2: Cloud Platforms</button>
+                    <div class="accordion-content">
+                        <ul>
+                            <!-- Days for Module 2 -->
+                            <li>
+                                <div class="day-item">
+                                    <input type="checkbox" class="topic-checkbox" id="day3">
+                                    <label for="day3">
+                                        <div class="circle"></div>
+                                        Day 3: Introduction to AWS
+                                    </label>
+                                </div>
+                            </li>
+                            <div class="day-item">
+                                <input type="checkbox" class="topic-checkbox" id="day3">
+                                <label for="day3">
+                                    <div class="circle"></div>
+                                    Day 4: AWS S3 Hands-on Practice
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <button class="accordion-header">Module 3: Cloud Platforms</button>
+                    <div class="accordion-content">
+                        <ul>
+                            <!-- Days for Module 3 -->
+                            <li>
+                                <div class="day-item">
+                                    <input type="checkbox" class="topic-checkbox" id="day3">
+                                    <label for="day3">
+                                        <div class="circle"></div>
+                                        Day 3: Introduction to AWS
+                                    </label>
+                                </div>
+                            </li>
+                            <div class="day-item">
+                                <input type="checkbox" class="topic-checkbox" id="day3">
+                                <label for="day3">
+                                    <div class="circle"></div>
+                                    Day 4: AWS S3 Hands-on Practice
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <button class="accordion-header">Module 4: Cloud Platforms</button>
+                    <div class="accordion-content">
+                        <ul>
+                            <!-- Days for Module 2 -->
+                            <li>
+                                <div class="day-item">
+                                    <input type="checkbox" class="topic-checkbox" id="day3">
+                                    <label for="day3">
+                                        <div class="circle"></div>
+                                        Day 3: Introduction to AWS
+                                    </label>
+                                </div>
+                            </li>
+                            <div class="day-item">
+                                <input type="checkbox" class="topic-checkbox" id="day3">
+                                <label for="day3">
+                                    <div class="circle"></div>
+                                    Day 4: AWS S3 Hands-on Practice
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <button class="accordion-header">Module 5: Cloud Platforms</button>
+                    <div class="accordion-content">
+                        <ul>
+                            <!-- Days for Module 5 -->
+                            <li>
+                                <div class="day-item">
+                                    <input type="checkbox" class="topic-checkbox" id="day3">
+                                    <label for="day3">
+                                        <div class="circle"></div>
+                                        Day 3: Introduction to AWS
+                                    </label>
+                                </div>
+                            </li>
+                            <div class="day-item">
+                                <input type="checkbox" class="topic-checkbox" id="day3">
+                                <label for="day3">
+                                    <div class="circle"></div>
+                                    Day 4: AWS S3 Hands-on Practice
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <button class="accordion-header">Module 6: Cloud Platforms</button>
+                    <div class="accordion-content">
+                        <ul>
+                            <!-- Days for Module 6 -->
+                            <li>
+                                <div class="day-item">
+                                    <input type="checkbox" class="topic-checkbox" id="day3">
+                                    <label for="day3">
+                                        <div class="circle"></div>
+                                        Day 3: Introduction to AWS
+                                    </label>
+                                </div>
+                            </li>
+                            <div class="day-item">
+                                <input type="checkbox" class="topic-checkbox" id="day3">
+                                <label for="day3">
+                                    <div class="circle"></div>
+                                    Day 4: AWS S3 Hands-on Practice
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <button class="accordion-header">Module 7: Cloud Platforms</button>
+                    <div class="accordion-content">
+                        <ul>
+                            <!-- Days for Module 7 -->
+                            <li>
+                                <div class="day-item">
+                                    <input type="checkbox" class="topic-checkbox" id="day3">
+                                    <label for="day3">
+                                        <div class="circle"></div>
+                                        Day 3: Introduction to AWS
+                                    </label>
+                                </div>
+                            </li>
+                            <div class="day-item">
+                                <input type="checkbox" class="topic-checkbox" id="day3">
+                                <label for="day3">
+                                    <div class="circle"></div>
+                                    Day 4: AWS S3 Hands-on Practice
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <button class="accordion-header">Module 8: Cloud Platforms</button>
+                    <div class="accordion-content">
+                        <ul>
+                            <!-- Days for Module 2 -->
+                            <li>
+                                <div class="day-item">
+                                    <input type="checkbox" class="topic-checkbox" id="day3">
+                                    <label for="day3">
+                                        <div class="circle"></div>
+                                        Day 3: Introduction to AWS
+                                    </label>
+                                </div>
+                            </li>
+                            <div class="day-item">
+                                <input type="checkbox" class="topic-checkbox" id="day3">
+                                <label for="day3">
+                                    <div class="circle"></div>
+                                    Day 4: AWS S3 Hands-on Practice
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <button class="accordion-header">Module 9: Cloud Platforms</button>
+                    <div class="accordion-content">
+                        <ul>
+                            <!-- Days for Module 2 -->
+                            <li>
+                                <div class="day-item">
+                                    <input type="checkbox" class="topic-checkbox" id="day3">
+                                    <label for="day3">
+                                        <div class="circle"></div>
+                                        Day 3: Introduction to AWS
+                                    </label>
+                                </div>
+                            </li>
+                            <div class="day-item">
+                                <input type="checkbox" class="topic-checkbox" id="day3">
+                                <label for="day3">
+                                    <div class="circle"></div>
+                                    Day 4: AWS S3 Hands-on Practice
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // script.js
+
+// Manually set this flag to true or false
+const isAdmin = false; // Change to false to simulate viewer mode
+
+// Function to get progress from localStorage or default to all unchecked
+function getProgress() {
+    const progress = JSON.parse(localStorage.getItem('courseProgress'));
+    if (progress) {
+        return progress;
+    }
+    // Default progress (all unchecked)
+    const checkboxes = document.querySelectorAll('.topic-checkbox');
+    return Array.from(checkboxes).map(cb => cb.checked);
+}
+
+// Function to set progress in localStorage
+function setProgress() {
+    const checkboxes = document.querySelectorAll('.topic-checkbox');
+    const progress = Array.from(checkboxes).map(cb => cb.checked);
+    localStorage.setItem('courseProgress', JSON.stringify(progress));
+}
+
+// Function to initialize the page based on the user role
+function setupPage() {
+    if (isAdmin) {
+        document.body.classList.add('admin');
+        document.body.classList.remove('viewer');
+    } else {
+        document.body.classList.add('viewer');
+        document.body.classList.remove('admin');
+    }
+
+    // Get saved progress from localStorage and apply it
+    const savedProgress = getProgress();
+    const checkboxes = document.querySelectorAll('.topic-checkbox');
+    checkboxes.forEach((cb, index) => {
+        cb.checked = savedProgress[index];
+    });
+
+    // Function to update the progress bar
+    function updateProgress() {
+        
+        const checkboxes = document.querySelectorAll('.topic-checkbox');
+        const total = checkboxes.length;
+        const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+        const progress = (checked / total) * 100;
+
+        // Update the width of the progress bar and text percentage
+        const progressBar = document.getElementById('progress-bar');
+        const progressPercent = document.getElementById('progress-percent');
+        
+        progressBar.style.width = progress + '%';
+        progressPercent.textContent = Math.round(progress) + '%';
+    }
+
+    // Add or remove event listeners based on role
+    if (isAdmin) {
+        document.querySelectorAll('.topic-checkbox').forEach(cb => {
+            cb.addEventListener('change', () => {
+                setProgress();
+                updateProgress();
+            });
+        });
+    } else {
+        document.querySelectorAll('.topic-checkbox').forEach(cb => {
+            cb.addEventListener('change', () => {
+                // Prevent changing checkbox states in viewer mode
+                cb.checked = !cb.checked;
+            });
+        });
+    }
+
+    // Update the progress bar initially
+    updateProgress();
+    // Accordion functionality
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            content.classList.toggle('expanded');
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+}
+
+// Run setup
+document.addEventListener('DOMContentLoaded', setupPage);
+
+    </script>
+</body>
+</html>

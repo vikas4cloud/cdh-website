@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Roadmap</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.roadmap-section {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+}
+
+.roadmap-container {
+    margin-top: 2%;
+    margin-bottom: 1%;
+    border-radius: 10px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    position: relative;
+    background-color: #1a1919;
+    width: 100%;
+    height: auto;
+}
+
+.road-img {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.milestone {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+
+.milestone-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.milestone-icon.red {
+    background-color: #A40108;
+}
+
+.milestone-icon.orange {
+    background-color: #FF8719;
+}
+
+.milestone-icon.green {
+    background-color: #80B547;
+}
+
+.milestone-icon.blue {
+    background-color: #0050C7;
+}
+
+.milestone-icon.purple {
+    background-color: #3E10A0;
+}
+
+.milestone:hover .milestone-icon {
+    transform: scale(1.2);
+}
+
+.milestone-popup {
+    position: absolute;
+    bottom: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    text-align: center;
+    z-index: 1;
+}
+
+.milestone:hover .milestone-popup {
+    opacity: 1;
+    visibility: visible;
+}
+
+.milestone-popup h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.milestone-popup p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Container for the milestones section */
+.milestone-section {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns to fit all in one row */
+    gap: 10px; /* Smaller gap between the cards */
+    padding: 20px;
+    /* background-color: #1a1a1a; Black background */
+    /* border: 2px solid white; White border around the container */
+    border-radius: 10px;
+    color: white;
+    justify-items: center; /* Align cards to center */
+}
+
+/* Milestone card styles */
+.milestone-card {
+    text-align: center;
+    padding: 10px; /* Smaller padding */
+    width: 160px; /* Smaller width to fit 5 in one line */
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon styling */
+.milestone-icon {
+    font-size: 36px; /* Smaller icon size */
+    margin-bottom: 5px;
+}
+
+/* Title styling */
+.milestone-title {
+    font-size: 18px; /* Smaller title font size */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Description styling */
+.milestone-description {
+    font-size: 14px; /* Smaller description font size */
+}
+
+/* Hover effect for the milestone cards */
+.milestone-card:hover {
+    transform: scale(1.05);
+    background-color: #3d3d3d;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    body{
+        overflow: hidden;
+    }
+    .roadmap-container{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .milestone-section {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+        overflow: hidden;
+    }
+
+    .milestone-card {
+        width: auto; /* Allow the cards to take full width in smaller screens */
+    }
+}
+
+/* General Styles for Milestones */
+.milestone {
+    position: absolute; /* Keep this to allow positioning */
+}
+
+/* Media Queries for Small Screens */
+@media (max-width: 480px) {
+    body{
+        overflow: hidden;
+    }
+    .roadmap-container{
+        margin-left: 5%;
+    }
+    /* Milestone 1 */
+    .milestone-icon:nth-child(1) {
+        width: 5px;
+        height: 5px;
+        top: 25%; /* Adjust the top position */
+        left: 10%; /* Adjust the left position */
+    }
+
+    /* Milestone 2 */
+    .milestone-icon:nth-child(2) {
+        width: 5px;
+        height: 5px;
+        top: 15%; /* Adjust the top position */
+        left: 30%; /* Adjust the left position */
+    }
+
+    /* Milestone 3 */
+    .milestone-icon:nth-child(3) {
+        width: 5px;
+        height: 5px;
+        top: 50%; /* Adjust the top position */
+        left: 45%; /* Adjust the left position */
+    }
+
+    /* Milestone 4 */
+    .milestone-icon:nth-child(4) {
+        width: 5px;
+        height: 5px;
+        top: 55%; /* Adjust the top position */
+        left: 70%; /* Adjust the left position */
+    }
+
+    /* Milestone 5 */
+    .milestone-icon:nth-child(5) {
+        width: 5px;
+        height: 5px;
+        top: 40%; /* Adjust the top position */
+        left: 90%; /* Adjust the left position */
+    }
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="roadmap-section">
+        <div class="roadmap-container">
+            <!-- Roadmap Image -->
+            <img src="../assets/roadmap-path.svg" alt="Roadmap Path" class="road-img">
+
+            <!-- Milestone 1 -->
+            <div class="milestone" style="top: 31%; left: 9.7%;">
+                <div class="milestone-icon red" title="Milestone 1"> <!-- Icon above path -->
+                    <i>🎯</i>
+                </div>
+                <div class="milestone-popup">
+                    <h3>Milestone 1</h3>
+                    <p>Details about Milestone 1...</p>
+                </div>
+            </div>
+
+            <!-- Milestone 2 -->
+            <div class="milestone" style="top: 13%; left: 29%;">
+                <div class="milestone-icon orange" title="Milestone 2">
+                    <i>📅</i>
+                </div>
+                <div class="milestone-popup">
+                    <h3>Milestone 2</h3>
+                    <p>Details about Milestone 2...</p>
+                </div>
+            </div>
+
+            <!-- Milestone 3 -->
+            <div class="milestone" style="top: 52%; left: 50%;">
+                <div class="milestone-icon green" title="Milestone 3">
+                    <i>💼</i>
+                </div>
+                <div class="milestone-popup">
+                    <h3>Milestone 3</h3>
+                    <p>Details about Milestone 3...</p>
+                </div>
+            </div>
+
+            <!-- Milestone 4 -->
+            <div class="milestone" style="top: 56%; left: 68.3%;">
+                <div class="milestone-icon blue" title="Milestone 4">
+                    <i>🚀</i>
+                </div>
+                <div class="milestone-popup">
+                    <h3>Milestone 4</h3>
+                    <p>Details about Milestone 4...</p>
+                </div>
+            </div>
+
+            <!-- Milestone 5 -->
+            <div class="milestone" style="top: 34%; left: 87.5%;">
+                <div class="milestone-icon purple" title="Milestone 5">
+                    <i>🏆</i>
+                </div>
+                <div class="milestone-popup">
+                    <h3>Milestone 5</h3>
+                    <p>Details about Milestone 5...</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

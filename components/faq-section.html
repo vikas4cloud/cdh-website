@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .faq-section {
+    width: 80%;
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(#D866F6, #9F06FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .faq-container {
+    margin-top: 20px;
+  }
+  
+  .faq {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #555358;
+    padding: 15px 0;
+  }
+  
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .faq-question h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #aa21ff;
+  }
+  
+  .faq-toggle {
+    font-size: 20px;
+    color: #ff6a00;
+  }
+  
+  .faq-answer {
+    display: none;
+    /* margin-top: 10px; */
+    padding: 20px 20px ;
+    font-size: 16px;
+    background-color: #35025e74;
+    border-radius: 10px;
+    color: #cacaca;
+  }
+  
+  .faq.active .faq-answer {
+    display: block;
+  }
+  
+  .faq.active .faq-toggle {
+    transform: rotate(45deg);
+  }
+  
+  </style>
+</head>
+<body>
+  <section class="faq-section">
+    <h1>Frequently Asked Questions</h1>
+    <div class="faq-container">
+      <div class="faq">
+        <div class="faq-question">
+          <h3>What is your return policy?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eaque sunt illo voluptatem quaerat sed dolorem magni aliquam, in nobis, reprehenderit architecto aut, expedita reiciendis nihil nemo esse error sit!</p>
+        </div>
+      </div>
+      <div class="faq">
+        <div class="faq-question">
+          <h3>Do you offer international shipping?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sed tempore dolore atque. Porro sapiente sed magni minus fuga eum necessitatibus provident. Quibusdam quisquam eum natus error, ipsa ullam ipsam.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <div class="faq-question">
+          <h3>How can I track my order?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>You can track your order using the tracking number provided in the confirmation email.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <div class="faq-question">
+          <h3>What payment methods are accepted?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>We accept Visa, Mastercard, PayPal, and other major payment methods.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <div class="faq-question">
+          <h3>Can I change my shipping address?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, you can change your shipping address before the order is processed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const faqs = document.querySelectorAll('.faq');
+    faqs.forEach(faq => {
+        faq.addEventListener('click', () => {
+        faq.classList.toggle('active');
+        });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cloud DevOps Hub</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: "Montserrat", sans-serif;
+				background-color: black;
+				color: white;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				overflow: hidden;
+			}
+
+			.container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 10px; /* Reduced padding */
+				border: 2px solid #9f06ff;
+				border-radius: 15px;
+				background-color: black;
+				max-width: 1000px; /* Reduced max-width */
+				width: 90%;
+				height: auto;
+				counter-reset: item; /* Initialize the counter */
+			}
+
+			.left-content {
+				flex: 1;
+				padding: 10px; /* Reduced padding */
+			}
+
+			.right-content {
+				flex: 2; /* Increased flex for right content */
+				padding: 10px; /* Reduced padding */
+			}
+
+			.styled-text {
+				font-family: "Montserrat", sans-serif;
+				font-style: normal;
+				font-weight: 700;
+				font-size: 28px; /* Reduced font size */
+				line-height: 38px; /* Reduced line height */
+				letter-spacing: -1px;
+				background: linear-gradient(
+					90deg,
+					#d866f6 26.9%,
+					#9f06ff 46.9%
+				);
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+				text-align: center; 
+				margin-bottom: 20px; /* Reduced margin */
+			}
+
+			.image-17 {
+				max-width: 100%; 
+				height: auto;
+				border: 3px solid #9f06ff;
+				border-radius: 10px;
+			}
+
+			.checklist {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 10px; /* Reduced gap */
+			}
+
+			.check-item {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				padding: 10px; /* Reduced padding */
+				background-color: black;
+				border: 2px solid #9f06ff;
+				border-radius: 10px;
+				position: relative; 
+			}
+
+			.check-item::before { 
+				content: counter(item); 
+				counter-increment: item; /* Increment the counter */
+				font-family: 'Inter', sans-serif;
+				font-weight: 400;
+				font-size: 16px; /* Reduced font size */
+				color: white; 
+				width: 25px; /* Reduced size of the circle */
+				height: 25px;
+				line-height: 25px; /* To center text vertically */
+				text-align: center;
+				background-color: #9f06ff;
+				border-radius: 50%; /* Make it a circle */
+				margin-right: 10px; /* Reduced margin */
+			}
+
+			.check-item span {
+				font-family: "Inter", sans-serif;
+				font-weight: 400;
+				font-size: 16px; /* Reduced font size */
+			}
+
+			.check-item .tooltip {
+				visibility: hidden;
+				background-color: rgba(0, 0, 0, 0.8);
+				color: #fff;
+				text-align: left; /* Align tooltip text to the left */
+				padding: 6px 10px; /* Adjusted padding for better spacing */
+				border-radius: 6px;
+				position: absolute;
+				z-index: 1;
+				bottom: 110%; /* Adjusted position */
+				left: 50%;
+				transform: translateX(-50%);
+				opacity: 0;
+				transition: opacity 0.3s;
+				width: 280px; /* Reduced width */
+			}
+
+			.check-item:hover .tooltip {
+				visibility: visible;
+				opacity: 1;
+			}
+
+			.join-now-btn {
+				display: block; 
+				margin: 20px auto; /* Reduced margin */
+				padding: 10px 20px; /* Reduced padding */
+				font-family: "Montserrat", sans-serif;
+				font-weight: bold;
+				font-size: 16px; /* Reduced font size */
+				text-align: center;
+				text-decoration: none;
+				background-color: #9f06ff;
+				color: white;
+				border: none;
+				border-radius: 25px;
+				cursor: pointer;
+				transition: background-color 0.3s ease;
+			}
+
+			.join-now-btn:hover {
+				background-color: #6a0dad; 
+			}
+
+			@media (max-width: 768px) {
+				.container {
+					flex-direction: column;
+					align-items: flex-start;
+				}
+
+				.checklist {
+					grid-template-columns: 1fr;
+				}
+
+				.styled-text {
+					font-size: 22px; /* Reduced font size */
+					line-height: 32px; /* Reduced line height */
+				}
+
+				.image-17 {
+					max-width: 100%; 
+				}
+				.join-now-btn {
+					margin: 15px auto; /* Reduced margin */
+				}
+
+				.check-item .tooltip {
+					width: 90%; /* Adjust tooltip width on smaller screens */
+					left: 5%; /* Position tooltip closer to the left edge */
+					transform: translateX(0); /* Remove horizontal centering */
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="left-content">
+				<img
+					class="image-17"
+					src="../assets/placeholder1.jpg"
+					alt="Descriptive text for image"
+				/>
+			</div>
+			<div class="right-content">
+				<div class="styled-text">What will you get access to?</div>
+				<div class="checklist">
+					<div class="check-item">
+						<span>9 Modules Base Learning</span>
+                        <span class="tooltip">Description for feature 1</span>
+					</div>
+					<div class="check-item">
+						<span>50+ Hours Instructor-Led Training</span>
+                        <span class="tooltip">Description for feature 2</span>
+					</div>
+					<div class="check-item">
+						<span>3 Real-Time Live Projects</span>
+                        <span class="tooltip">Description for feature 3</span>
+					</div>
+					<div class="check-item">
+						<span>Interview Preparation</span>
+                        <span class="tooltip">Description for feature 4</span>
+					</div>
+					<div class="check-item">
+						<span>Resume Making</span>
+                        <span class="tooltip">Description for feature 5</span>
+					</div>
+					<div class="check-item">
+						<span>40% Theory + 60% Practical</span>
+                        <span class="tooltip">Description for feature 6</span>
+					</div>
+                    <div class="check-item">
+						<span>Live learning with top educators</span>
+                        <span class="tooltip">Learn live with top educators, chat with teachers and other attendees, and get your doubts cleared.</span>
+					</div>
+                    <div class="check-item">
+						<span>Structured learning designed by experts</span>
+                        <span class="tooltip">Our curriculum is designed by experts to make sure you get the best learning experience.</span>
+					</div>
+                    <div class="check-item">
+						<span>Community & Networking in exclusive groups</span>
+                        <span class="tooltip">Interact and network with like-minded folks from various backgrounds in exclusive chat groups.</span>
+					</div>
+                    <div class="check-item">
+						<span>Learn with the best</span>
+                        <span class="tooltip">Stuck on something? Discuss it with your peers and the instructors in the inbuilt chat groups.</span>
+					</div>
+                    <div class="check-item">
+						<span>Practice tests and evaluations</span>
+                        <span class="tooltip">Check your progress with practice tests and evaluations at every milestone to stay on track.</span>
+					</div>
+                    <div class="check-item">
+						<span>Get certified</span>
+                        <span class="tooltip">Flaunt your skills with course certificates. You can
+							showcase the certificates on LinkedIn with a click.</span>
+					</div>
+				</div>
+				<a href="https://www.clouddevopshub.com/courses/Multi-Cloud%20with%20AWS%20DevOps%20Program:%20Realtime%20(Batch%2037)%20All-in-One%20Course-65f70221bbd7bc36420cdccc" target="_blank" class="join-now-btn">Join Now</a>
+			</div>
+		</div>
+	</body>
+</html>

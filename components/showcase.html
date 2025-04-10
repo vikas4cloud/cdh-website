@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Infinite Horizontal Scroll Stats</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+			body {
+				margin: 0;
+				font-family: 'Poppins', sans-serif;
+				background-color: black;
+				color: #fff;
+				overflow-x: hidden;
+			}
+
+			.stats-section {
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+				padding: 40px 0; /* Reduced padding */
+				background-color: black;
+			}
+
+			.stats-section h2 {
+				background: linear-gradient(90deg, #D866F6, #9F06FF);
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				margin-bottom: 30px; /* Reduced margin */
+				font-size: 1.8em; /* Use relative font size for better responsiveness */
+			}
+
+
+			.scroll-container {
+				display: flex;
+				overflow: hidden;
+				white-space: nowrap;
+				padding: 15px; /* Reduced padding */
+				border: 2px solid #a352d7;
+				border-radius: 25px;
+				width: 90%; /* Take up more width on smaller screens */
+				margin: 0 auto;
+				background-color: black;
+			}
+
+			.scroll-content {
+				display: inline-flex;
+				animation: scroll 15s linear infinite; /* Reduced animation duration */
+			}
+
+			.scroll-content div {
+				flex: 0 0 auto;
+				margin: 0 15px; /* Reduced margin */
+				text-align: center;
+			}
+
+			.scroll-content div img {
+				width: 100%;
+				height: 60px; /* Reduced height */
+				margin-bottom: 5px; /* Reduced margin */
+			}
+
+			.scroll-content div p {
+				color: #a352d7;
+				font-size: 0.9em; /* Use relative font size */
+			}
+
+			.view-more-btn {
+				display: block; 
+				margin: 20px auto; /* Center the button horizontally */
+				padding: 10px 20px; /* Reduced padding */
+				font-family: Poppins, sans-serif;
+				font-weight: bold;
+				font-size: 16px; /* Reduced font size */
+				text-align: center;
+				text-decoration: none;
+				background-color: #9f06ff;
+				color: white;
+				border: none;
+				border-radius: 25px;
+				cursor: pointer;
+				transition: background-color 0.3s ease;
+			}
+
+			.view-more-btn a {
+				text-decoration: none;
+				color: white;
+			}
+
+			.view-more-btn:hover {
+				background-color: #6a0dad; /* Darker purple on hover */
+			}
+
+			@keyframes scroll {
+				0% {
+					transform: translateX(0);
+				}
+				100% {
+					transform: translateX(-100%);
+				}
+			}
+
+			/* Hide extra items on smaller screens */
+			@media (max-width: 768px) {
+				.scroll-content div:nth-child(n+3) {
+					display: none;
+				}
+				.view-more-btn {
+					margin: 15px auto; /* Adjust margin for smaller screens */
+				}
+			}
+
+			.scroll-content:hover {
+				animation-play-state: paused;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Top Placement Stats Section -->
+		<div class="stats-section">
+			<h2>Top Placement Statistics</h2>
+			<div class="scroll-container">
+				<div class="scroll-content">
+				<!-- Logos and Text -->
+				<div>
+					<img src="../assets/amazon.png" alt="Amazon">
+				</div>
+				<div>
+					<img src="../assets/tcs.png" alt="TCS">
+				</div>
+				<div>
+					<img src="../assets/infosys.png" alt="Infosys">
+				</div>
+				<div>
+					<img src="../assets/techmahindra.png" alt="Tech Mahindra">
+				</div>
+				<div>
+					<img src="../assets/wipro.png" alt="Wipro">
+				</div>
+				<div>
+					<img src="../assets/amazon.png" alt="Amazon">
+				</div>
+				<div>
+					<img src="../assets/tcs.png" alt="TCS">
+				</div>
+				<div>
+					<img src="../assets/infosys.png" alt="Infosys">
+				</div>
+				<div>
+					<img src="../assets/techmahindra.png" alt="Tech Mahindra">
+				</div>
+				<div>
+					<img src="../assets/wipro.png" alt="Wipro">
+				</div>
+				<div>
+					<img src="../assets/amazon.png" alt="Amazon">
+				</div>
+				<div>
+					<img src="../assets/tcs.png" alt="TCS">
+				</div>
+				<div>
+					<img src="../assets/infosys.png" alt="Infosys">
+				</div>
+				<div>
+				</div>
+			</div>
+		</div>
+		<button class="view-more-btn">
+			<a href="https://www.clouddevopshub.com/s/pages/successstories" target="_blank" >
+				View More
+			</a> 
+		</button>
+	</body>
+</html>

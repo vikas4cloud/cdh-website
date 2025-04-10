@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Course Instructor Card</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: Montserrat, sans-serif;
+				background-color: black;
+			}
+
+			.card-container {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				background-color: black;
+				border-radius: 10px;
+				padding: 20px; /* Reduced padding */
+				color: white;
+				max-width: 900px; /* Increased max-width */
+				margin: 40px auto; /* Reduced margin */
+				border: 2px solid #6a0dad; /* Purple border */
+				position: relative;
+			}
+
+			.text-content {
+				max-width: 450px; /* Increased max-width */
+			}
+
+			.text-content h1 {
+				color: #a63df5; /* Bold purple */
+				font-size: 30px; /* Reduced font size */
+				margin: 0;
+			}
+
+			.text-content p {
+				font-size: 16px; /* Reduced font size */
+				margin-top: 10px; /* Reduced margin */
+				line-height: 1.5; /* Reduced line height */
+				color: #bfbfbf; /* Lighter grey for text */
+			}
+
+			.profile-picture {
+				border-radius: 50%;
+				overflow: hidden;
+				border: 5px solid #6a0dad;
+				width: 320px; /* Increased size */
+				height: 320px; /* Increased size */
+				background-color: #333;
+				z-index: 2;
+				position: relative;
+			}
+
+			.profile-picture img {
+				width: 320px; /* Increased size */
+				height: 320px; /* Increased size */
+				object-fit: cover;
+			}
+
+			/* Cloud and Gear image styles */
+			.cloud-image {
+				position: absolute;
+				top: 15px;
+				right: 220px; /* Adjusted position */
+				width: 180px; /* Increased size */
+				z-index: 1;
+			}
+
+			.gear-image {
+				position: absolute;
+				bottom: 15px;
+				right: 15px;
+				width: 100px; /* Increased size */
+				z-index: 1;
+			}
+
+			@media only screen and (max-width: 768px) {
+				.card-container {
+					flex-direction: column;
+					align-items: center;
+				}
+
+				.text-content {
+					margin-bottom: 15px; /* Reduced margin */
+				}
+
+				.profile-picture {
+					width: 200px; /* Reduced size */
+					height: 200px; /* Reduced size */
+				}
+
+				.profile-picture img {
+					width: 200px; /* Reduced size */
+					height: 200px; /* Reduced size */
+				}
+
+				.cloud-image {
+					bottom: 5px;
+					top:unset;
+					left: 5px; /* Center the image horizontally */
+					width: 120px; /* Reduced size */
+					position: absolute;
+				}
+
+				.gear-image {
+					bottom: 5px;
+					right: 5px;
+					width: 60px; /* Reduced size */
+				}
+			} 
+
+			@media only screen and (max-width: 480px) {
+				.card-container {
+					padding: 15px; /* Reduced padding */
+				}
+
+				.text-content {
+					margin-bottom: 5px; /* Reduced margin */
+				}
+
+				.profile-picture {
+					width: 150px; /* Reduced size */
+					height: 150px; /* Reduced size */
+				}
+
+				.profile-picture img {
+					width: 150px; /* Reduced size */
+					height: 150px; /* Reduced size */
+				}
+
+				.cloud-image {
+					top: unset;
+					bottom: 3px;
+					left: 3px;
+					right:unset;
+					width: 80px; /* Reduced size */
+				}
+
+				.gear-image {
+					bottom: 3px;
+					right: 3px;
+					width: 40px; /* Reduced size */
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="card-container">
+			<div class="text-content">
+				<h1>Hi, I am Vikas, your course instructor.</h1>
+				<p>
+					With 14+ years of IT experience, Vikas has mentored over
+					7,000 engineers, led 33+ AWS and GCP Cloud Architect
+					batches, and built a community of 55,000+ DevOps
+					professionals. He holds top certifications in AWS, Google
+					Cloud, and CKAD, and has contributed to over 100+ projects
+					and industry insights. Join Vikas for a transformative
+					journey in Cloud and DevOps excellence.
+				</p>
+			</div>
+			<div class="profile-picture">
+				<img src="../assets/instructor.png" alt="Profile Picture" />
+			</div>
+			<!-- Cloud and Gear as PNG images -->
+			<img src="../assets/cloud.png" alt="Cloud" class="cloud-image" />
+			<img src="../assets/gear.png" alt="Gear" class="gear-image" />
+		</div>
+	</body>
+</html>

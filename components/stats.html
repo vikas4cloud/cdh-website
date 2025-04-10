@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hero Section with Stats</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: "Montserrat", sans-serif;
+				background-color: #020202;
+				color: white;
+			}
+
+			h1 {
+				font-size: 2.5rem; /* Reduced font size */
+				margin-bottom: 0.8rem; /* Reduced margin */
+			}
+
+			p {
+				font-size: 1.1rem; /* Reduced font size */
+				max-width: 500px; /* Reduced max-width */
+			}
+
+			.stats{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			/* Stats Section */
+			.stats-section {
+				display: flex;
+				flex-direction: column; /* Column direction for the mission statement and stats */
+				margin-top: 30px; /* Reduced margin */
+				border: 2px solid #9f06ff;
+				border-radius: 20px; /* Rounded border */
+				padding: 15px; /* Reduced padding */
+				background-color: #020202;
+				width:80%;
+			}
+
+			/* Mission Statement */
+			.mission-statement {
+				text-align: center;
+				margin-bottom: 20px; /* Reduced margin */
+				padding: 5px; /* Reduced padding */
+				font-size: 1.1rem; /* Reduced font size */
+				font-weight: bold;
+				color: #ffffff;
+			}
+
+			/* Flexbox for Stats */
+			.stats-container {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				width: 100%;
+			}
+
+			.stat {
+				flex: 1;
+				padding: 10px; /* Reduced padding */
+				text-align: center;
+			}
+
+			.stat-number {
+				font-size: 2em; /* Reduced font size */
+				display: block;
+				font-family: "Montserrat", sans-serif;
+				font-weight: bold;
+			}
+
+			.stat-text {
+				font-size: 0.9em; /* Reduced font size */
+			}
+
+			.stat-container {
+				flex: 1;
+				padding: 10px; /* Reduced padding */
+				text-align: center;
+				border-right: 2px solid white; /* Vertical border */
+			}
+
+			.stat-container:last-child {
+				border-right: none; /* Remove border for the last stat */
+			}
+
+			/* Breakpoint for small screens (e.g., mobile phones in landscape or small tablets) */
+			@media (max-width: 768px) {
+				.stats-container {
+					flex-direction: column;
+				}
+
+				.stat-container {
+					border-right: none; /* Remove vertical border on mobile */
+					border-bottom: 2px solid white; /* Horizontal border on mobile */
+				}
+
+				.stat-container:last-child {
+					border-bottom: none; /* Remove bottom border for the last stat */
+				}
+			}
+		</style>
+		<div class="stats">
+			<div class="stats-section">
+				<!-- Mission Statement -->
+				<div class="mission-statement">
+					We are helping over 10,000+ Cloud and DevOps enthusiasts secure
+					their dream jobs with high salaries.
+				</div>
+
+				<!-- Stats -->
+				<div class="stats-container">
+					<div class="stat-container">
+						<div class="stat">
+							<span class="stat-number">35+</span>
+							<span class="stat-text"
+								>Successful Batches Delivered</span
+							>
+						</div>
+					</div>
+					<div class="stat-container">
+						<div class="stat">
+							<span class="stat-number">5000+</span>
+							<span class="stat-text">Job Placements</span>
+						</div>
+					</div>
+					<div class="stat-container">
+						<div class="stat">
+							<span class="stat-number">1000+</span>
+							<span class="stat-text"
+								>Candidates with 25+ LPA jobs</span
+							>
+						</div>
+					</div>
+					<div class="stat-container">
+						<div class="stat">
+							<span class="stat-number">100%</span>
+							<span class="stat-text">Satisfaction</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

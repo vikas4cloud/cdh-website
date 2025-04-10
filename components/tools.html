@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DevOps Tools Section</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			html, body {
+    		overflow: hidden;
+    		margin: 0;
+    		padding: 0;
+		}
+			body {
+				font-family: Montserrat, sans-serif;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				margin-left: 5;
+				background-color: #000000;
+			}
+
+			.tools-section {
+				text-align: center;
+			}
+
+			h1 {
+				margin-bottom: 20px;
+				background: linear-gradient(90deg, #d866f6, #9f06ff);
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				font-size: xx-large;
+			}
+
+			.icons-container {
+				position: relative;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				width: 500px;
+				height: 500px;
+			}
+
+			.devops-icon {
+				position: absolute;
+				top: 100px;
+				right: 250px;
+				width: 500px;
+				height: 500px;
+			}
+
+			.devops-icon img {
+				width: 100%;
+				height: auto;
+			}
+
+			.aws-icon {
+				position: absolute;
+				top: 0;
+				left: 500px;
+				width: 300px;
+				height: 300px;
+			}
+
+			.aws-icon img {
+				width: 100%;
+				height: auto;
+			}
+
+			.cloud-icon {
+				position: absolute;
+				top: 280px;
+				left: 500px;
+				width: 300px;
+				height: 300px;
+			}
+
+			.cloud-icon img {
+				width: 100%;
+				height: auto;
+			}
+
+			/* General styles for all tool icons */
+			.tool-icon {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				transition: transform 0.3s;
+			}
+
+			.tool-icon img {
+				width: 100%;
+				height: auto;
+			}
+
+			.tool-icon:hover {
+				transform: scale(1.5);
+			}
+
+			.big-tool-icon:hover{
+				transform: scale(1.5);
+			}
+
+			.tool-icon .tooltip {
+				position: absolute;
+				bottom: -20px;
+				left: 50%;
+				transform: translateX(-50%);
+				background-color: rgba(0, 0, 0, 0.7);
+				color: white;
+				padding: 5px;
+				border-radius: 5px;
+				font-size: 14px;
+				opacity: 0;
+				visibility: hidden;
+				transition: opacity 0.3s;
+			}
+
+			.tool-icon:hover .tooltip {
+				opacity: 1;
+				visibility: visible;
+			}
+
+			.big-tool-icon .tooltip {
+				opacity: 1;
+				visibility: visible;
+			}
+
+			/* Positioning icons around the main logo */
+			.top {
+				top: 50px;
+			}
+
+			.bottom {
+				bottom: 50px;
+			}
+
+			.left {
+				left: 50px;
+			}
+
+			.right {
+				right: 50px;
+			}
+			.plus-icon{
+				top: 80px;
+				width: 50px;
+				height: 50px;
+				left: 200px;
+			}
+			.tool-1 {
+				right: 600px;
+				top: 10px;
+			}
+			.tool-2 {
+				right: 450px;
+				top: 10px;
+			}
+			.tool-3 {
+				left: 80px;
+				top: 10px;
+			}
+			.tool-4 {
+				left: 200px;
+				top: 10px;
+			}
+
+			.tool-5 {
+				right: 600px;
+				top: 350px;
+			}
+			.tool-6 {
+				right: 450px;
+				top: 390px;
+			}
+			.tool-7 {
+				left: 80px;
+				top: 370px;
+			}
+			.tool-8 {
+				left: 200px;
+				top: 370px;
+			}
+
+			.tool-9 {
+				top: 120px;
+				left: -350px;
+			}
+			.tool-10 {
+				bottom: 120px;
+				left: -350px;
+			}
+
+			.tool-11 {
+				top: 130px;
+				right: 150px;
+			}
+			.tool-12 {
+				bottom: 120px;
+				right: 100px;
+			}
+
+			@media screen and (max-width: 480px) {
+				h1 {
+					margin-left: 50px;
+				}
+				.icons-container {
+					margin-left: 20px;
+					margin-right: 80px;
+					width: 300px;
+					height: 300px;
+				}
+
+				.devops-icon {
+					width: 200px;
+					height: 200px;
+					left: 40px;
+				}
+
+				.aws-icon {
+					top: 80px;
+					width: 100px;
+					height: 100px;
+					left: 280px;
+				}
+
+				.cloud-icon {
+					top: 180px;
+					width: 100px;
+					height: 100px;
+					left: 280px;
+				}
+
+				.tool-icon {
+					width: 50px;
+					height: 50px;
+				}
+
+				.plus-icon{
+					display: none;
+				}
+
+				.tool-1 {
+					left: 20px;
+					top: 30px;
+				}
+				.tool-2 {
+					left: 90px;
+					top: 40px;
+				}
+				.tool-3 {
+					left: 150px;
+					top: 40px;
+				}
+				.tool-4 {
+					right: -60px;
+					top: 40px;
+				}
+
+				.tool-5 {
+					left: 50px;
+					top: 200px;
+				}
+				.tool-6 {
+					left: 110px;
+					top: 220px;
+				}
+				.tool-7 {
+					left: 170px;
+					top: 210px;
+				}
+				.tool-8 {
+					left: 220px;
+					top: 210px;
+				}
+
+				.tool-9 {
+					top: 110px;
+					left: -10px;
+				}
+				.tool-10 {
+					bottom: 70px;
+					left: -10px;
+				}
+
+				.tool-11 {
+					top: 100px;
+					left: 220px;
+				}
+				.tool-12 {
+					bottom: 100px;
+					left: 240px;
+				}
+			}
+			@media screen and (max-width: 1024px) {
+				h1 {
+					margin-left: 50px;
+				}
+				.icons-container {
+					width: 300px;
+					height: 300px;
+				}
+
+				.devops-icon {
+					width: 200px;
+					height: 200px;
+					left: 40px;
+				}
+
+				.plus-icon{
+					display: none;
+				}
+
+				.aws-icon {
+					top: 80px;
+					width: 100px;
+					height: 100px;
+					left: 280px;
+				}
+
+				.plus-icon{
+					top: 80px;
+					width: 10px;
+					height: 10px;
+					left: 680px;
+				}
+				.cloud-icon {
+					top: 180px;
+					width: 100px;
+					height: 100px;
+					left: 280px;
+				}
+
+				.tool-icon {
+					width: 50px;
+					height: 50px;
+				}
+
+				.tool-1 {
+					left: 20px;
+					top: 30px;
+				}
+				.tool-2 {
+					left: 90px;
+					top: 40px;
+				}
+				.tool-3 {
+					left: 150px;
+					top: 40px;
+				}
+				.tool-4 {
+					right: -60px;
+					top: 40px;
+				}
+
+				.tool-5 {
+					left: 50px;
+					top: 200px;
+				}
+				.tool-6 {
+					left: 110px;
+					top: 220px;
+				}
+				.tool-7 {
+					left: 170px;
+					top: 210px;
+				}
+				.tool-8 {
+					left: 220px;
+					top: 210px;
+				}
+
+				.tool-9 {
+					top: 110px;
+					left: -10px;
+				}
+				.tool-10 {
+					bottom: 70px;
+					left: -10px;
+				}
+
+				.tool-11 {
+					top: 100px;
+					left: 220px;
+				}
+				.tool-12 {
+					bottom: 100px;
+					left: 240px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<section class="tools-section">
+			<h1>Tools You Will Learn</h1>
+			<div class="icons-container">
+				<div class="bigger-icons-container">
+				<!-- Main DevOps Icon -->
+				<div class="devops-icon">
+					<img
+						src="../assets/infinitesign.svg"
+						alt="DevOps Infinite Sign"
+					/>
+				</div>
+				
+				<div class ="aws-icon">
+					<div class="big-tool-icon top tool-1">
+					<img
+						src="../assets/aws-icon.svg"
+						alt="AWS LOGO"
+					/>
+					<span class="tooltip">Amazon Web Services</span>
+				</div>
+				</div>
+				<div class ="cloud-icon">
+					<div class="big-tool-icon top tool-1">
+					<img
+						src="../assets/cloud-icon.svg"
+						alt="Google Cloud Icon"
+					/>
+					<span class="tooltip">Google Cloud</span>
+				</div>
+				</div>
+			</div>
+				<!-- Surrounding Icons -->
+				 <!-- Plus Icon for AWS -->
+				<div class="plus-icon">
+					<img src="../assets/plus-icon.svg" alt="Plus Icon" />
+				</div>
+				<div class="tool-icon top tool-1">
+					<img src="../assets/tool1.svg" alt="Tool 1" />
+					<span class="tooltip">Linux</span>
+				</div>
+				<div class="tool-icon top tool-2">
+					<img src="../assets/tool2.svg" alt="Tool 2" />
+					<span class="tooltip">Jenkins</span>
+				</div>
+				<div class="tool-icon top tool-3">
+					<img src="../assets/tool3.svg" alt="Tool 3" />
+					<span class="tooltip">Ansible</span>
+				</div>
+				<div class="tool-icon top tool-4">
+					<img src="../assets/tool4.svg" alt="Tool 4" />
+					<span class="tooltip">GitLab</span>
+				</div>
+				<div class="tool-icon bottom tool-5">
+					<img src="../assets/tool5.svg" alt="Tool 5" />
+					<span class="tooltip">Terraform</span>
+				</div>
+				<div class="tool-icon bottom tool-6">
+					<img src="../assets/tool6.svg" alt="Tool 6" />
+					<span class="tooltip">Apache Maven</span>
+				</div>
+				<div class="tool-icon bottom tool-7">
+					<img src="../assets/tool7.svg" alt="Tool 7" />
+					<span class="tooltip">Python</span>
+				</div>
+				<div class="tool-icon bottom tool-8">
+					<img src="../assets/tool8.svg" alt="Tool 8" />
+					<span class="tooltip">Prometheus</span>
+				</div>
+				<div class="tool-icon left tool-9">
+					<img src="../assets/tool9.svg" alt="Tool 9" />
+					<span class="tooltip">Git</span>
+				</div>
+				<div class="tool-icon left tool-10">
+					<img src="../assets/tool10.svg" alt="Tool 10" />
+					<span class="tooltip">Grafana</span>
+				</div>
+				<div class="tool-icon right tool-11">
+					<img src="../assets/tool11.svg" alt="Tool 11" />
+					<span class="tooltip">Docker</span>
+				</div>
+				<div class="tool-icon right tool-12">
+					<img src="../assets/tool12.svg" alt="Tool 12" />
+					<span class="tooltip">Kubernetes</span>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

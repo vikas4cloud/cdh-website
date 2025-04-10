@@ -1,0 +1,1814 @@
+<!---OTHERS--->
+<meta charset="UTF-8" /><meta
+	name="viewport"
+	content="width=device-width, initial-scale=1.0"
+/><title>Course Page</title
+><style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: "Montserrat", sans-serif;
+		background-color: black;
+		color: white;
+	}
+
+	.hero {
+		padding: 20px;
+		text-align: center;
+		background: url("svgurl"); /* Replaced long SVG URL with 'svgurl' */
+		background-repeat: no-repeat;
+		background-size: 800px 800px;
+		background-size: cover;
+		z-index: -1;
+	}
+
+	.hero .hero-top-text {
+		background-color: rgba(72, 69, 210, 0.25);
+		color: orange;
+		padding: 10px 30px;
+		border-radius: 25px;
+		font-size: 1.2em;
+		margin-bottom: 20px;
+	}
+
+	.hero .hero-content {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.hero .left-section {
+		flex: 1;
+		padding: 20px;
+		text-align: left;
+	}
+
+	.hero .left-section h1 {
+		font-size: 3.5em;
+		line-height: 1.2;
+	}
+
+	.hero .join-text {
+		margin-top: 10px;
+		font-size: 1.2em;
+		color: white;
+		margin-left: 20px;
+	}
+
+	.hero .button-group {
+		margin-top: 20px;
+	}
+
+	.hero .btn {
+		padding: 10px 20px;
+		border: none;
+		border-radius: 25px;
+		cursor: pointer;
+		font-size: 1.1em;
+		margin-right: 20px;
+	}
+
+	.hero .btn:hover {
+		background-color: #8005cc;
+	}
+
+	.hero .primary {
+		background-color: #9f06ff;
+		color: white;
+	}
+
+	.hero .right-section {
+		flex: 1;
+		padding: 20px;
+		text-align: center;
+	}
+
+	.hero .carousel {
+		position: relative;
+		width: 400px;
+		height: 400px;
+		margin: 0 auto; /* Center the carousel */
+	}
+
+	.hero .carousel-img {
+		width: 400px;
+		height: 400px;
+		border-radius: 15px;
+		object-fit: cover; /* Ensure images fill the container */
+	}
+
+	.hero .prev,
+	.hero .next {
+		position: absolute;
+		top: 50%;
+		background-color: #9f06ff; /* Purple background */
+		color: white;
+		padding: 10px;
+		border-radius: 50%; /* Rounded buttons */
+		width: 40px;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		font-size: 1.5em; /* Increase size of the symbols */
+		border: none;
+		transform: translateY(-50%);
+	}
+
+	.hero .prev::before {
+		content: "<"; /* Left arrow */
+	}
+
+	.hero .next::before {
+		content: ">"; /* Right arrow */
+	}
+
+	.hero .prev:hover,
+	.hero .next:hover {
+		background-color: #8005cc; /* Slightly darker purple on hover */
+	}
+
+	.hero .prev {
+		left: 10px;
+	}
+
+	.hero .next {
+		right: 10px;
+	}
+
+	.hero .stats-section {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 40px;
+		border: 2px solid #9f06ff;
+		border-radius: 20px; /* Rounded border */
+		padding: 20px;
+		background-color: #020202;
+	}
+
+	.hero .stat {
+		flex: 1;
+		padding: 20px;
+		text-align: center;
+	}
+
+	.hero .stat-number {
+		font-size: 2.5em;
+		display: block;
+		font-family: "Montserrat", sans-serif;
+		font-weight: bold;
+	}
+
+	.hero .stat-text {
+		font-size: 1.1em;
+	}
+
+	.hero .stat-container {
+		flex: 1;
+		padding: 20px;
+		text-align: center;
+		border-right: 2px solid white; /* Vertical border */
+	}
+
+	.hero .stat-container:last-child {
+		border-right: none; /* Remove border for the last stat */
+	}
+
+	.hero .placeholder-container {
+		display: flex;
+		align-items: center;
+	}
+
+	/* Breakpoint for small screens (e.g., mobile phones in landscape or small tablets) */
+	@media (max-width: 768px) {
+		.hero .hero-content {
+			flex-direction: column;
+		}
+
+		.hero .left-section h1 {
+			font-size: 2.5em;
+		}
+
+		.hero .stats-section {
+			flex-direction: column;
+		}
+
+		.hero .carousel {
+			width: 100%;
+			height: auto;
+		}
+
+		.hero .carousel-img {
+			width: 100%;
+			height: auto;
+		}
+
+		.hero .stat-container {
+			border-right: none; /* Remove vertical border on mobile */
+			border-bottom: 2px solid white; /* Horizontal border on mobile */
+		}
+
+		.hero .placeholder-container {
+			flex-direction: column;
+			margin-top: 10px;
+		}
+
+		.hero .stat-container:last-child {
+			border-bottom: none; /* Remove bottom border for the last stat */
+		}
+	}
+
+	/* Breakpoint for larger screens (e.g., tablets in landscape or small desktops) */
+	@media (max-width: 1200px) {
+		.hero .left-section h1 {
+			font-size: 3.5em;
+		}
+	}
+	@media (min-width: 1400px) {
+		.hero {
+			padding-left: 200px;
+			padding-right: 200px;
+		}
+	}
+
+	/* Breakpoint for medium-sized screens (e.g., tablets and small laptops) */
+	@media (max-width: 992px) {
+		.hero .left-section h1 {
+			font-size: 3em;
+		}
+	}
+
+	/* Breakpoint for very small screens (e.g., mobile phones in portrait) */
+	@media (max-width: 576px) {
+		.hero .left-section h1 {
+			font-size: 2em;
+		}
+		.hero .hero-top-text {
+			font-size: 0.9rem;
+		}
+		.hero .button-group {
+			width: 100%;
+			align-items: center;
+		}
+	}
+
+	.hero .sphere-container {
+		position: relative;
+		display: flex;
+		gap: 0; /* Remove the gap between spheres */
+	}
+
+	.hero .sphere {
+		position: relative;
+		width: 50px; /* Change to 50px */
+		height: 50px; /* Change to 50px */
+		background-color: #9f06ff;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adjust shadow for smaller spheres */
+		transition: transform 0.3s ease;
+		z-index: 1; /* Make sure the sphere is properly stacked */
+		margin-left: -20px; /* Adjust margin for overlap */
+	}
+
+	.hero .sphere:first-child {
+		margin-left: 0; /* Ensure the first sphere is not pushed left */
+	}
+
+	.hero .sphere img {
+		border-radius: 50%;
+		padding: 2px; /* Adjust padding for smaller spheres */
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+
+	.hero .sphere:hover {
+		transform: scale(1.2); /* Adjust scale for smaller spheres */
+		z-index: 2; /* Bring the hovered sphere to the front */
+	}
+
+	.hero .tooltip {
+		position: absolute;
+		top: -50px; /* Position above the sphere */
+		left: 50%;
+		transform: translateX(-50%) translateY(0); /* Initial tooltip position */
+		padding: 10px 20px;
+		background-color: #020202;
+		color: white;
+		border: 2px solid #9f06ff;
+		border-radius: 10px;
+		font-size: 14px;
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+		z-index: 3; /* Ensure the tooltip appears above everything */
+	}
+
+	.hero .sphere:hover .tooltip {
+		visibility: visible;
+		opacity: 1;
+		animation: bounce 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; /* Bounce animation with spring effect */
+	}
+
+	/* Keyframes for combined vertical and horizontal bounce effect */
+	@keyframes bounce {
+		0% {
+			transform: translateX(-50%) translateY(0);
+		}
+		20% {
+			transform: translateX(-45%) translateY(-10px); /* Move slightly to the right and up */
+		}
+		40% {
+			transform: translateX(-48%) translateY(-5px); /* Move left slightly and down */
+		}
+		60% {
+			transform: translateX(-52%) translateY(-15px); /* Move right and further up */
+		}
+		80% {
+			transform: translateX(-50%) translateY(-8px); /* Return closer to center */
+		}
+		100% {
+			transform: translateX(-50%) translateY(-10px); /* Final position */
+		}
+	}
+
+	.features {
+		border: 2px solid #8c00ff;
+		border-radius: 20px;
+		padding: 5% 5%;
+		display: flex;
+		align-items: flex-start; /* Aligns the content to the top */
+		justify-content: space-between;
+		width: 80%;
+		margin: 7% auto; /* Adjusted margin for a higher position */
+	}
+
+	.features .left-section {
+		width: 45%;
+	}
+
+	.features .left-section h1 {
+		font-size: 2.5rem; /* Larger font size */
+		font-weight: bold;
+		color: #ffffff;
+		margin-bottom: 20px; /* Space it out from the paragraph */
+	}
+
+	.features .left-section small {
+		font-size: 1rem;
+		color: #ff8a00;
+	}
+
+	.features .left-section p {
+		color: rgb(162, 157, 157);
+		font-size: 1.2rem;
+		margin: 15px 0;
+		margin-bottom: 30px;
+	}
+
+	.features .explore-btn {
+		background-color: #9f06ff;
+		color: white;
+		border: none;
+		padding: 12px 24px; /* Adjust padding for better button size */
+		cursor: pointer;
+		font-size: 1rem;
+		font-weight: 500;
+		border-radius: 5px;
+		margin-top: 20px; /* Increase margin for spacing */
+		transition: background-color 0.3s, transform 0.3s;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		cursor: pointer;
+		animation: colorChange 5s infinite; /* Apply animation */
+	}
+
+	@keyframes colorChange {
+		0% {
+			background-color: #9d00fe;
+		}
+		25% {
+			background-color: #d103ff;
+		}
+		50% {
+			background-color: #9d00fe;
+		}
+		75% {
+			background-color: #d103ff; /* Gold */
+		}
+		100% {
+			background-color: #9d00fe; /* Back to Green */
+		}
+	}
+
+	.features .explore-btn:hover {
+		background-color: #5b00ab;
+		animation: none;
+		transform: translateY(-3px); /* Subtle hover lift */
+	}
+
+	.features .right-section {
+		margin-left: 20%;
+		width: 48%; /* Slightly reduced width for better balance */
+		overflow: hidden;
+		height: 320px; /* Slight increase in height for two features */
+	}
+
+	.features .feature {
+		display: flex;
+		flex-direction: column;
+		padding: 30px 0; /* Adjust padding for more balanced spacing */
+		height: 160px; /* Adjust height for better spacing */
+		border-bottom: solid 2px #66666632;
+	}
+
+	.features .feature-icon {
+		width: 50px; /* Slightly larger icon size */
+		height: 50px;
+		margin-bottom: 15px;
+		padding: 10px 10px;
+		border-radius: 50%;
+		border: 1px solid white;
+	}
+
+	.features .feature h2 {
+		font-size: 1.2rem;
+		margin-bottom: 8px;
+	}
+
+	.features .feature p {
+		font-size: 0.95rem;
+		color: #666; /* Lighter text color for better readability */
+	}
+
+	.features .feature-container {
+		display: flex;
+		flex-direction: column;
+		animation: scrollFeatures 8s linear infinite;
+	}
+
+	/* Auto-scroll: Moves one feature up at a time, adding smooth transitions */
+	@keyframes scrollFeatures {
+		0%,
+		10% {
+			transform: translateY(0);
+		}
+		20%,
+		30% {
+			transform: translateY(-160px);
+		} /* Height changed to match .feature */
+		40%,
+		50% {
+			transform: translateY(-320px);
+		}
+		60%,
+		70% {
+			transform: translateY(-480px);
+		}
+		80%,
+		90% {
+			transform: translateY(-640px);
+		}
+		100% {
+			transform: translateY(-800px);
+		} /* Ends after the last feature */
+	}
+
+	@media (max-width: 768px) {
+		.features {
+			flex-direction: column; /* Stack the left and right sections */
+			align-items: center; /* Center content */
+		}
+
+		.features .left-section,
+		.features .right-section {
+			width: 100%;
+			margin: 20px 0;
+		}
+
+		.features .left-section h1 {
+			font-size: 1.8rem;
+		}
+
+		.features .explore-btn {
+			padding: 10px 16px;
+		}
+	}
+
+	.instructor {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background-color: black;
+		border-radius: 10px;
+		padding: 30px;
+		color: white;
+		max-width: 900px;
+		margin: 50px auto;
+		border: 2px solid #6a0dad; /* Purple border */
+		position: relative;
+	}
+
+	.instructor .text-content {
+		max-width: 500px;
+	}
+
+	.instructor .text-content h1 {
+		color: #a63df5; /* Bold purple */
+		font-size: 36px;
+		margin: 0;
+	}
+
+	.instructor .text-content p {
+		font-size: 18px;
+		margin-top: 15px;
+		line-height: 1.6;
+		color: #bfbfbf; /* Lighter grey for text */
+	}
+
+	.instructor .profile-picture {
+		border-radius: 50%;
+		overflow: hidden;
+		border: 5px solid #6a0dad;
+		width: 354px;
+		height: 354px;
+		background-color: #333;
+		z-index: 2;
+		position: relative;
+	}
+
+	.instructor .profile-picture img {
+		width: 354px;
+		height: 354px;
+		object-fit: cover;
+	}
+
+	/* Cloud and Gear image styles */
+	.instructor .cloud-image {
+		position: absolute;
+		top: 20px;
+		right: 240px;
+		width: 200px;
+		z-index: 1;
+	}
+
+	.instructor .gear-image {
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+		width: 100px;
+		z-index: 1;
+	}
+
+	.difference {
+		background-color: black;
+		border: 2px solid #9f06ff; /* Purple border */
+		border-radius: 15px;
+		padding: 20px;
+		max-width: 800px;
+		margin: 20px auto;
+		color: white;
+	}
+
+	.difference .header {
+		display: flex;
+		align-items: center;
+		margin-bottom: 20px;
+	}
+
+	.difference .title {
+		font-size: 1.5em;
+		margin-left: 10px; /* Space between the image and title */
+		font-weight: bold;
+	}
+
+	.difference .logo {
+		height: 50px; /* Adjust size of the logo image */
+	}
+
+	.difference .content {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.difference .section {
+		flex: 1;
+		padding: 10px;
+	}
+
+	.difference .section-heading {
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+
+	.difference .section-red {
+		color: red;
+	}
+
+	.difference .section-green {
+		color: green;
+	}
+
+	.difference .section-red-list,
+	.difference .section-green-list {
+		list-style-type: disc;
+		margin-left: 20px;
+	}
+
+	.difference .section-red-list li,
+	.difference .section-green-list li {
+		margin-bottom: 5px;
+	}
+
+	@media (max-width: 768px) {
+		.difference .content {
+			flex-direction: column;
+		}
+
+		.difference .section-red {
+			border-bottom: 2px solid white; /* Horizontal rule on mobile */
+		}
+	}
+
+	@media (min-width: 769px) {
+		.difference .section-red {
+			border-right: 2px solid white; /* Vertical rule on desktop */
+		}
+	}
+
+	.stats-section {
+		text-align: center;
+		padding: 50px 0;
+		background-color: black;
+	}
+
+	.stats-section h2 {
+		background: linear-gradient(90deg, #d866f6, #9f06ff);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		margin-bottom: 40px;
+		font-size: 2em; /* Use relative font size for better responsiveness */
+	}
+
+	.scroll-container {
+		display: flex;
+		overflow: hidden;
+		white-space: nowrap;
+		padding: 20px;
+		border: 2px solid #a352d7;
+		border-radius: 25px;
+		width: 90%; /* Take up more width on smaller screens */
+		margin: 0 auto;
+		background-color: black;
+	}
+
+	.scroll-content {
+		display: inline-flex;
+		animation: scroll 20s linear infinite;
+	}
+
+	.scroll-content div {
+		flex: 0 0 auto;
+		margin: 0 20px;
+		text-align: center;
+	}
+
+	.scroll-content div img {
+		width: 50px;
+		height: 50px;
+		margin-bottom: 10px;
+	}
+
+	.scroll-content div p {
+		color: #a352d7;
+		font-size: 1em; /* Use relative font size */
+	}
+
+	@keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-100%);
+		}
+	}
+
+	/* Hide extra items on smaller screens */
+	@media (max-width: 768px) {
+		.scroll-content div:nth-child(n + 3) {
+			display: none;
+		}
+	}
+
+	.scroll-content:hover {
+		animation-play-state: paused;
+	}
+
+	.testimonial-section {
+		text-align: center;
+		padding: 50px 20px;
+		background-color: black;
+	}
+
+	.testimonial-section h2 {
+		color: #9f06ff;
+		font-family: Poppins;
+		font-size: 32px;
+		margin-bottom: 10px;
+	}
+
+	.testimonial-section p {
+		color: #ddd;
+		margin-bottom: 40px;
+		font-family: Poppins;
+	}
+
+	.carousel-container {
+		display: flex;
+		overflow: hidden;
+		justify-content: center;
+		position: relative;
+		background-color: #1a1621;
+		padding: 20px;
+		border-radius: 10px;
+	}
+
+	.testimonial-card {
+		flex: 0 0 90%; /* Start with occupying most of the screen */
+		margin: 0 10px 20px; /* Add bottom margin for spacing */
+		background-color: #333;
+		border-radius: 10px;
+		padding: 20px;
+		text-align: left;
+		opacity: 0.7;
+		transition: opacity 0.3s ease;
+	}
+
+	.testimonial-card.active {
+		opacity: 1;
+	}
+
+	.testimonial-card .video-container {
+		position: relative;
+		padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+		height: 0;
+		overflow: hidden;
+		margin-bottom: 20px;
+	}
+
+	.testimonial-card .video-container iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.testimonial-card .quote {
+		margin-bottom: 20px;
+		font-size: 14px;
+		line-height: 1.6;
+	}
+
+	.testimonial-card .profile {
+		display: flex;
+		align-items: center;
+	}
+
+	.testimonial-card .profile img {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		margin-right: 10px;
+	}
+
+	.testimonial-card .profile div {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.testimonial-card .profile .name {
+		font-weight: bold;
+	}
+
+	.testimonial-card .profile .job-title {
+		font-size: 12px;
+		color: #999;
+	}
+
+	.carousel-nav {
+		display: flex;
+		justify-content: center;
+		margin-top: 20px;
+	}
+
+	.carousel-nav div {
+		width: 10px;
+		height: 10px;
+		background-color: #777;
+		margin: 0 5px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+
+	.carousel-nav div.active {
+		background-color: #4d2c5e;
+	}
+
+	@media (min-width: 768px) {
+		.testimonial-card {
+			flex: 0 0 45%; /* Adjust width for tablets */
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.testimonial-card {
+			flex: 0 0 300px; /* Original width for larger screens */
+		}
+	}
+
+	.faq-section {
+		width: 80%;
+		max-width: 900px;
+		margin: 50px auto;
+		background-color: black;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+	}
+
+	.faq-section h1 {
+		text-align: center;
+		margin-bottom: 20px;
+		background: -webkit-linear-gradient(#d866f6, #9f06ff);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.faq-container {
+		margin-top: 20px;
+	}
+
+	.faq {
+		margin-bottom: 10px;
+		border-bottom: 1px solid #555358;
+		padding: 15px 0;
+	}
+
+	.faq-question {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	.faq-question h3 {
+		margin: 0;
+		font-size: 18px;
+		color: #aa21ff;
+	}
+
+	.faq-toggle {
+		font-size: 20px;
+		color: #ff6a00;
+	}
+
+	.faq-answer {
+		display: none;
+		/* margin-top: 10px; */
+		padding: 20px 20px;
+		font-size: 16px;
+		background-color: #35025e74;
+		border-radius: 10px;
+		color: #cacaca;
+	}
+
+	.faq.active .faq-answer {
+		display: block;
+	}
+
+	.faq.active .faq-toggle {
+		transform: rotate(45deg);
+	}
+
+	.cta-section {
+		text-align: center;
+		padding: 80px 20px;
+		background-color: black;
+	}
+
+	.cta-section h2 {
+		font-size: 36px;
+		color: #9f06ff;
+		margin-bottom: 20px;
+	}
+
+	.cta-section p {
+		color: #ccc;
+		margin-bottom: 40px;
+	}
+
+	.cta-section .btn-explore {
+		padding: 12px 24px;
+		background: linear-gradient(90deg, #cd10ff, #9f06ff);
+		color: #fff;
+		border: none;
+		border-radius: 30px;
+		cursor: pointer;
+		font-size: 16px;
+		transition: background-color 0.3s ease;
+	}
+
+	.cta-section .btn-explore:hover {
+		background-color: #8f3ec2;
+	}
+
+	.footer {
+		background-color: black;
+		padding: 50px 20px;
+	}
+
+	.footer .footer-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.footer .newsletter {
+		display: flex;
+		align-items: center;
+	}
+
+	.footer .newsletter input {
+		padding: 12px 20px;
+		border: none;
+		border-radius: 30px 0 0 30px;
+		outline: none;
+		width: 300px;
+		max-width: 100%;
+		font-size: 14px;
+		background-color: #fff;
+		color: #333;
+	}
+
+	.footer .newsletter button {
+		padding: 12px 20px;
+		background: linear-gradient(90deg, #cd10ff, #9f06ff);
+		border: none;
+		border-radius: 0 30px 30px 0;
+		color: #fff;
+		cursor: pointer;
+		font-size: 14px;
+		transition: background-color 0.3s ease;
+	}
+
+	.footer .newsletter button:hover {
+		background: linear-gradient(90deg, #cd10ff, #9f06ff);
+	}
+
+	.footer .menu {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 50px;
+	}
+
+	.footer .menu div {
+		flex: 1;
+	}
+
+	.footer .menu h3 {
+		font-size: 18px;
+		margin-bottom: 15px;
+		color: #9f06ff;
+	}
+
+	.footer .menu ul {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	.footer .menu ul li {
+		margin-bottom: 10px;
+	}
+
+	.footer .menu ul li a {
+		color: white;
+		text-decoration: none;
+		font-size: 14px;
+		transition: color 0.3s ease;
+	}
+
+	.footer .menu ul li a:hover {
+		color: #fff;
+	}
+
+	.footer .logo {
+		display: flex;
+		gap: 20px;
+	}
+
+	.footer .logo img {
+		width: 120px;
+		margin-bottom: 15px;
+	}
+
+	.footer .bottom-bar {
+		margin-top: 30px;
+		text-align: center;
+		padding: 20px;
+		background: linear-gradient(90deg, #cd10ff, #9f06ff);
+		color: #fff;
+		font-size: 14px;
+		border-radius: 3%;
+		padding: 5px;
+	}
+
+	.footer .bottom-bar .bottom-bar-content {
+		display: flex;
+		gap: 30px;
+		justify-content: space-between;
+		padding: 20px;
+		background-color: black;
+		align-items: center;
+	}
+
+	.footer .bottom-bar .bottom-bar-content span {
+		background: linear-gradient(90deg, #cd10ff, #9f06ff);
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+		font-weight: bold;
+		font-family: "Poppins";
+		font-size: 20px;
+	}
+
+	.footer .bottom-bar button a {
+		color: white;
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+	.footer .bottom-bar button a:hover {
+		text-decoration: underline;
+	}
+
+	.bottom-bar .btn-join-now {
+		padding: 12px 24px;
+		background: linear-gradient(90deg, #cd10ff, #9f06ff);
+		color: #fff;
+		border: none;
+		border-radius: 30px;
+		cursor: pointer;
+		font-size: 16px;
+		transition: background-color 0.3s ease;
+	}
+
+	.bottom-bar .btn-join-now:hover {
+		background-color: #8f3ec2;
+	}</style
+><style class="darkreader darkreader--sync" media="screen"></style>
+<div class="hero" id="1726136963454">
+	<div class="hero-top-text">
+		Are you ready to upskill for the 2024 job market?
+	</div>
+
+	<div class="hero-content">
+		<div class="left-section">
+			<h1>
+				2.5 Months Live, <br />
+				100% Real-Time <br />
+				Multi-Cloud &amp; <br />
+				DevOps Bootcamp <br />
+				with Placement!
+			</h1>
+			<div class="placeholder-container">
+				<div class="sphere-container">
+					<div class="sphere" data-name="Student 1">
+						<img
+							src="https://via.placeholder.com/150"
+							alt="Student 1"
+						/>
+						<div class="tooltip">Student</div>
+					</div>
+					<div class="sphere" data-name="Student 2">
+						<img
+							src="https://via.placeholder.com/150"
+							alt="Student 2"
+						/>
+						<div class="tooltip">Student</div>
+					</div>
+					<div class="sphere" data-name="Student 3">
+						<img
+							src="https://via.placeholder.com/150"
+							alt="Student 3"
+						/>
+						<div class="tooltip">Student</div>
+					</div>
+					<div class="sphere" data-name="Student 4">
+						<img
+							src="https://via.placeholder.com/150"
+							alt="Student 4"
+						/>
+						<div class="tooltip">Student</div>
+					</div>
+					<div class="sphere" data-name="Student 5">
+						<img
+							src="https://via.placeholder.com/150"
+							alt="Student 5"
+						/>
+						<div class="tooltip">Student</div>
+					</div>
+					<script>
+						document
+							.querySelectorAll(".sphere")
+							.forEach((sphere) => {
+								sphere.addEventListener(
+									"mouseenter",
+									function () {
+										const tooltip =
+											this.querySelector(".tooltip")
+										tooltip.style.animation = "none" // Reset animation
+
+										setTimeout(() => {
+											tooltip.style.animation =
+												"bounce 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards"
+										}, 10) // Small delay to restart the animation smoothly
+									}
+								)
+							})
+					</script>
+				</div>
+				<p class="join-text">
+					Join over
+					<span
+						style="
+							color: rgb(159, 6, 255);
+							--darkreader-inline-color: #8c2cc9;
+						"
+						data-darkreader-inline-color=""
+						>4000+</span
+					>
+					students
+				</p>
+			</div>
+			<div class="button-group">
+				<button class="btn primary" fdprocessedid="r3n6ub">
+					Introduction Video
+				</button>
+				<button class="btn primary" fdprocessedid="iwhtyf">
+					Join Now
+				</button>
+			</div>
+		</div>
+
+		<div class="right-section">
+			<div class="carousel">
+				<img
+					src="../assets/placeholder1.jpg"
+					alt="Image 1"
+					class="carousel-img"
+				/>
+				<button class="prev" fdprocessedid="xdwvjm"></button>
+				<button class="next" fdprocessedid="3ricj7"></button>
+			</div>
+		</div>
+	</div>
+
+	<div class="stats-section">
+		<div class="stat-container">
+			<div class="stat">
+				<span class="stat-number">35+</span>
+				<span class="stat-text">Successful Batches Delivered</span>
+			</div>
+		</div>
+		<div class="stat-container">
+			<div class="stat">
+				<span class="stat-number">5000+</span>
+				<span class="stat-text">Job Placements</span>
+			</div>
+		</div>
+		<div class="stat-container">
+			<div class="stat">
+				<span class="stat-number">1000+</span>
+				<span class="stat-text">Candidates with 25+ LPA jobs</span>
+			</div>
+		</div>
+		<div class="stat-container">
+			<div class="stat">
+				<span class="stat-number">100%</span>
+				<span class="stat-text">Satisfaction</span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="features" id="1726136713285">
+	<!-- Left Section -->
+	<div class="left-section">
+		<small>Why we’re your</small>
+		<h1>Best Cloud &amp; DevOps Learning Choice?</h1>
+		<p>
+			Cloud DevOps Hub helping to Learn &amp; Grow together for the last
+			15+ years.
+		</p>
+		<button class="explore-btn" fdprocessedid="7yw3i">
+			Explore Courses
+		</button>
+	</div>
+
+	<!-- Right Section -->
+	<div class="right-section">
+		<div class="feature-container">
+			<!-- Feature 1 -->
+			<div class="feature" id="feature-1">
+				<img
+					src="../assets/icon1.svg"
+					alt="Icon 1"
+					class="feature-icon"
+				/>
+				<h2>Feature 1</h2>
+				<p>Learn the basics of Cloud Computing.</p>
+			</div>
+			<!-- Feature 2 -->
+			<div class="feature" id="feature-2">
+				<img
+					src="../assets/icon2.svg"
+					alt="Icon 2"
+					class="feature-icon"
+				/>
+				<h2>Feature 2</h2>
+				<p>Master DevOps Tools and Techniques.</p>
+			</div>
+			<!-- Feature 3 -->
+			<div class="feature" id="feature-3">
+				<img
+					src="../assets/icon1.svg"
+					alt="Icon 3"
+					class="feature-icon"
+				/>
+				<h2>Feature 3</h2>
+				<p>Advanced AWS &amp; Azure Cloud Training.</p>
+			</div>
+			<!-- Feature 4 -->
+			<div class="feature" id="feature-4">
+				<img
+					src="../assets/icon2.svg"
+					alt="Icon 4"
+					class="feature-icon"
+				/>
+				<h2>Feature 4</h2>
+				<p>Automate with Kubernetes and Docker.</p>
+			</div>
+			<!-- Feature 5 -->
+			<div class="feature" id="feature-5">
+				<img
+					src="../assets/icon1.svg"
+					alt="Icon 5"
+					class="feature-icon"
+				/>
+				<h2>Feature 5</h2>
+				<p>Monitor and scale applications easily.</p>
+			</div>
+			<!-- Feature 6 -->
+			<div class="feature" id="feature-6">
+				<img
+					src="../assets/icon2.svg"
+					alt="Icon 6"
+					class="feature-icon"
+				/>
+				<h2>Feature 6</h2>
+				<p>Deploy faster using CI/CD pipelines.</p>
+			</div>
+			<!-- Feature 7 -->
+			<div class="feature" id="feature-7">
+				<img
+					src="../assets/icon1.svg"
+					alt="Icon 7"
+					class="feature-icon"
+				/>
+				<h2>Feature 7</h2>
+				<p>Security best practices in DevOps.</p>
+			</div>
+			<!-- Feature 8 -->
+			<div class="feature" id="feature-8">
+				<img
+					src="../assets/icon2.svg"
+					alt="Icon 8"
+					class="feature-icon"
+				/>
+				<h2>Feature 8</h2>
+				<p>Optimize performance with cloud analytics.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="instructor">
+	<div class="text-content">
+		<h1>Hi, I am Vikas, your course instructor.</h1>
+		<p>
+			With 14+ years of IT experience, Vikas has mentored over 7,000
+			engineers, led 33+ AWS and GCP Cloud Architect batches, and built a
+			community of 55,000+ DevOps professionals. He holds top
+			certifications in AWS, Google Cloud, and CKAD, and has contributed
+			to over 100+ projects and industry insights. Join Vikas for a
+			transformative journey in Cloud and DevOps excellence.
+		</p>
+	</div>
+
+	<div class="profile-picture">
+		<img src="../assets/Instructor.png" alt="Profile Picture" />
+	</div>
+
+	<!-- Cloud and Gear as PNG images -->
+	<img src="../assets/cloud.png" alt="Cloud" class="cloud-image" />
+	<img src="../assets/image 15.png" alt="Gear" class="gear-image" />
+</div>
+<div class="difference" id="1726136540978">
+	<div class="header">
+		<img
+			src="../assets/logo.png"
+			alt="Cloud DevOps Hub Logo"
+			class="logo"
+		/>
+		<div class="title">Cloud DevOps Hub : Your Competitive Edge</div>
+	</div>
+	<div class="content">
+		<div class="section section-red">
+			<div class="section-heading">Institute Courses</div>
+			<ul class="section-red-list">
+				<li>Higher costs compared to community-driven options.</li>
+				<li>Less flexibility in course schedules.</li>
+				<li>Limited real-world application and case studies.</li>
+				<li>Standardized curriculum may not address specific needs.</li>
+				<li>Potential lack of up-to-date industry practices.</li>
+			</ul>
+		</div>
+		<div class="section section-green">
+			<div class="section-heading">Community Driven Courses</div>
+			<ul class="section-green-list">
+				<li>More affordable or even free options.</li>
+				<li>Flexible scheduling tailored to your needs.</li>
+				<li>Practical insights from industry professionals.</li>
+				<li>Curriculum often updated with the latest trends.</li>
+				<li>Opportunities for networking and community support.</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="stats-section" id="1726135638903">
+	<h2>Top Placement Statistics</h2>
+	<div class="scroll-container">
+		<div class="scroll-content">
+			<!-- Logos and Text -->
+			<div>
+				<img
+					src="https://via.placeholder.com/50x50?text=Logo1"
+					alt="Logo 1"
+				/>
+				<p>Logoipsum</p>
+			</div>
+			<div>
+				<img
+					src="https://via.placeholder.com/50x50?text=Logo2"
+					alt="Logo 2"
+				/>
+				<p>Logoipsum</p>
+			</div>
+			<div>
+				<img
+					src="https://via.placeholder.com/50x50?text=Logo3"
+					alt="Logo 3"
+				/>
+				<p>Logoipsum</p>
+			</div>
+			<div>
+				<img
+					src="https://via.placeholder.com/50x50?text=Logo4"
+					alt="Logo 4"
+				/>
+				<p>Logoipsum</p>
+			</div>
+			<div>
+				<img
+					src="https://via.placeholder.com/50x50?text=Logo5"
+					alt="Logo 5"
+				/>
+				<p>Logoipsum</p>
+			</div>
+
+			<div class="hero-content">
+				<div class="left-section">
+					<h1>
+						2.5 Months Live, <br />
+						100% Real-Time <br />
+						Multi-Cloud &amp; <br />
+						DevOps Bootcamp <br />
+						with Placement!
+					</h1>
+					<div class="placeholder-container">
+						<div class="sphere-container">
+							<div class="sphere" data-name="Student 1">
+								<img
+									src="https://via.placeholder.com/150"
+									alt="Student 1"
+								/>
+								<div class="tooltip">Student</div>
+							</div>
+							<div class="sphere" data-name="Student 2">
+								<img
+									src="https://via.placeholder.com/150"
+									alt="Student 2"
+								/>
+								<div class="tooltip">Student</div>
+							</div>
+							<div class="sphere" data-name="Student 3">
+								<img
+									src="https://via.placeholder.com/150"
+									alt="Student 3"
+								/>
+								<div class="tooltip">Student</div>
+							</div>
+							<div class="sphere" data-name="Student 4">
+								<img
+									src="https://via.placeholder.com/150"
+									alt="Student 4"
+								/>
+								<div class="tooltip">Student</div>
+							</div>
+							<div class="sphere" data-name="Student 5">
+								<img
+									src="https://via.placeholder.com/150"
+									alt="Student 5"
+								/>
+								<div class="tooltip">Student</div>
+							</div>
+							<script>
+								document
+									.querySelectorAll(".sphere")
+									.forEach((sphere) => {
+										sphere.addEventListener(
+											"mouseenter",
+											function () {
+												const tooltip =
+													this.querySelector(
+														".tooltip"
+													)
+												tooltip.style.animation = "none" // Reset animation
+
+												setTimeout(() => {
+													tooltip.style.animation =
+														"bounce 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards"
+												}, 10) // Small delay to restart the animation smoothly
+											}
+										)
+									})
+							</script>
+						</div>
+						<p class="join-text">
+							Join over
+							<span
+								style="
+									color: rgb(159, 6, 255);
+									--darkreader-inline-color: #8c2cc9;
+								"
+								data-darkreader-inline-color=""
+								>4000+</span
+							>
+							students
+						</p>
+					</div>
+					<div class="button-group">
+						<button class="btn primary" fdprocessedid="r3n6ub">
+							Introduction Video
+						</button>
+						<button class="btn primary" fdprocessedid="iwhtyf">
+							Join Now
+						</button>
+					</div>
+				</div>
+
+				<div class="right-section">
+					<div class="carousel">
+						<img
+							src="../assets/placeholder1.jpg"
+							alt="Image 1"
+							class="carousel-img"
+						/>
+						<button class="prev" fdprocessedid="xdwvjm"></button>
+						<button class="next" fdprocessedid="3ricj7"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="testimonial-card">
+			<div class="video-container">
+				<iframe
+					width="560"
+					height="315"
+					src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2"
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen=""
+				></iframe>
+			</div>
+			<div class="quote">
+				"There are many variations of passages of Lorem Ipsum available,
+				but the majority have suffered alteration in some form, by
+				injected humour."
+			</div>
+			<div class="profile">
+				<img src="https://via.placeholder.com/40" alt="Profile Image" />
+				<div>
+					<div class="name">Dannette P. Cervantes</div>
+					<div class="job-title">Web Design</div>
+				</div>
+			</div>
+		</div>
+		<div class="features" id="1726136713285">
+			<!-- Left Section -->
+			<div class="left-section">
+				<small>Why we’re your</small>
+				<h1>Best Cloud &amp; DevOps Learning Choice?</h1>
+				<p>
+					Cloud DevOps Hub helping to Learn &amp; Grow together for
+					the last 15+ years.
+				</p>
+				<button class="explore-btn" fdprocessedid="7yw3i">
+					Explore Courses
+				</button>
+			</div>
+
+			<!-- Right Section -->
+			<div class="right-section">
+				<div class="feature-container">
+					<!-- Feature 1 -->
+					<div class="feature" id="feature-1">
+						<img
+							src="../assets/icon1.svg"
+							alt="Icon 1"
+							class="feature-icon"
+						/>
+						<h2>Feature 1</h2>
+						<p>Learn the basics of Cloud Computing.</p>
+					</div>
+					<!-- Feature 2 -->
+					<div class="feature" id="feature-2">
+						<img
+							src="../assets/icon2.svg"
+							alt="Icon 2"
+							class="feature-icon"
+						/>
+						<h2>Feature 2</h2>
+						<p>Master DevOps Tools and Techniques.</p>
+					</div>
+					<!-- Feature 3 -->
+					<div class="feature" id="feature-3">
+						<img
+							src="../assets/icon1.svg"
+							alt="Icon 3"
+							class="feature-icon"
+						/>
+						<h2>Feature 3</h2>
+						<p>Advanced AWS &amp; Azure Cloud Training.</p>
+					</div>
+					<!-- Feature 4 -->
+					<div class="feature" id="feature-4">
+						<img
+							src="../assets/icon2.svg"
+							alt="Icon 4"
+							class="feature-icon"
+						/>
+						<h2>Feature 4</h2>
+						<p>Automate with Kubernetes and Docker.</p>
+					</div>
+					<!-- Feature 5 -->
+					<div class="feature" id="feature-5">
+						<img
+							src="../assets/icon1.svg"
+							alt="Icon 5"
+							class="feature-icon"
+						/>
+						<h2>Feature 5</h2>
+						<p>Monitor and scale applications easily.</p>
+					</div>
+					<!-- Feature 6 -->
+					<div class="feature" id="feature-6">
+						<img
+							src="../assets/icon2.svg"
+							alt="Icon 6"
+							class="feature-icon"
+						/>
+						<h2>Feature 6</h2>
+						<p>Deploy faster using CI/CD pipelines.</p>
+					</div>
+					<!-- Feature 7 -->
+					<div class="feature" id="feature-7">
+						<img
+							src="../assets/icon1.svg"
+							alt="Icon 7"
+							class="feature-icon"
+						/>
+						<h2>Feature 7</h2>
+						<p>Security best practices in DevOps.</p>
+					</div>
+					<!-- Feature 8 -->
+					<div class="feature" id="feature-8">
+						<img
+							src="../assets/icon2.svg"
+							alt="Icon 8"
+							class="feature-icon"
+						/>
+						<h2>Feature 8</h2>
+						<p>Optimize performance with cloud analytics.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="instructor">
+			<div class="text-content">
+				<h1>Hi, I am Vikas, your course instructor.</h1>
+				<p>
+					With 14+ years of IT experience, Vikas has mentored over
+					7,000 engineers, led 33+ AWS and GCP Cloud Architect
+					batches, and built a community of 55,000+ DevOps
+					professionals. He holds top certifications in AWS, Google
+					Cloud, and CKAD, and has contributed to over 100+ projects
+					and industry insights. Join Vikas for a transformative
+					journey in Cloud and DevOps excellence.
+				</p>
+			</div>
+
+			<div class="profile-picture">
+				<img src="../assets/Instructor.png" alt="Profile Picture" />
+			</div>
+
+			<!-- Cloud and Gear as PNG images -->
+			<img src="../assets/cloud.png" alt="Cloud" class="cloud-image" />
+			<img src="../assets/gear.svg" alt="Gear" class="gear-image" />
+		</div>
+		<div class="difference" id="1726136540978">
+			<div class="header">
+				<img
+					src="../assets/logo.png"
+					alt="Cloud DevOps Hub Logo"
+					class="logo"
+				/>
+				<div class="title">
+					Cloud DevOps Hub : Your Competitive Edge
+				</div>
+			</div>
+			<div class="content">
+				<div class="section section-red">
+					<div class="section-heading">Institute Courses</div>
+					<ul class="section-red-list">
+						<li>
+							Higher costs compared to community-driven options.
+						</li>
+						<li>Less flexibility in course schedules.</li>
+						<li>
+							Limited real-world application and case studies.
+						</li>
+						<li>
+							Standardized curriculum may not address specific
+							needs.
+						</li>
+						<li>
+							Potential lack of up-to-date industry practices.
+						</li>
+					</ul>
+				</div>
+				<div class="section section-green">
+					<div class="section-heading">Community Driven Courses</div>
+					<ul class="section-green-list">
+						<li>More affordable or even free options.</li>
+						<li>Flexible scheduling tailored to your needs.</li>
+						<li>Practical insights from industry professionals.</li>
+						<li>
+							Curriculum often updated with the latest trends.
+						</li>
+						<li>
+							Opportunities for networking and community support.
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="stats-section" id="1726135638903">
+			<h2>Top Placement Statistics</h2>
+			<div class="scroll-container">
+				<div class="scroll-content">
+					<!-- Logos and Text -->
+					<div>
+						<div class="name">Clara R. Altman</div>
+						<div class="job-title">UI/UX Designer</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="carousel-nav">
+			<div class="nav-dot active"></div>
+			<div class="nav-dot"></div>
+			<div class="nav-dot"></div>
+		</div>
+	</div>
+	<div class="faq-section" id="1726136163749">
+		<h1>Frequently Asked Questions</h1>
+		<div class="faq-container">
+			<div class="faq">
+				<div class="faq-question">
+					<h3>What is your return policy?</h3>
+					<span class="faq-toggle">+</span>
+				</div>
+				<div class="faq-answer">
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Ratione eaque sunt illo voluptatem quaerat sed dolorem
+						magni aliquam, in nobis, reprehenderit architecto aut,
+						expedita reiciendis nihil nemo esse error sit!
+					</p>
+				</div>
+			</div>
+			<div class="faq">
+				<div class="faq-question">
+					<h3>Do you offer international shipping?</h3>
+					<span class="faq-toggle">+</span>
+				</div>
+				<div class="faq-answer">
+					<p>
+						Lorem, ipsum dolor sit amet consectetur adipisicing
+						elit. Excepturi sed tempore dolore atque. Porro sapiente
+						sed magni minus fuga eum necessitatibus provident.
+						Quibusdam quisquam eum natus error, ipsa ullam ipsam.
+					</p>
+				</div>
+			</div>
+			<script>
+				let currentImageIndex = 0
+				const images = [
+					"../assets/placeholder1.jpg",
+					"../assets/placeholder2.jpg"
+				]
+				const carouselImg = document.querySelector(".carousel-img")
+
+				document
+					.querySelector(".next")
+					.addEventListener("click", () => {
+						currentImageIndex =
+							(currentImageIndex + 1) % images.length
+						carouselImg.src = images[currentImageIndex]
+					})
+
+				document
+					.querySelector(".prev")
+					.addEventListener("click", () => {
+						currentImageIndex =
+							(currentImageIndex - 1 + images.length) %
+							images.length
+						carouselImg.src = images[currentImageIndex]
+					})
+				const cards = document.querySelectorAll(".testimonial-card")
+				const navDots = document.querySelectorAll(".nav-dot")
+				let currentIndex = 0
+
+				function showCard(index) {
+					cards.forEach((card, i) => {
+						card.classList.toggle("active", i === index)
+					})
+
+					navDots.forEach((dot, i) => {
+						dot.classList.toggle("active", i === index)
+					})
+				}
+
+				navDots.forEach((dot, index) => {
+					dot.addEventListener("click", () => {
+						currentIndex = index
+						showCard(index)
+					})
+				})
+
+				setInterval(() => {
+					currentIndex = (currentIndex + 1) % cards.length
+					showCard(currentIndex)
+				}, 3000)
+
+				const faqs = document.querySelectorAll(".faq")
+				faqs.forEach((faq) => {
+					faq.addEventListener("click", () => {
+						faq.classList.toggle("active")
+					})
+				})
+			</script>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bottom Bar Component</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+      body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: #111;
+        color: #fff;
+      }
+
+      .bottom-bar {
+        margin-top: 30px;
+        text-align: center;
+        padding: 20px;
+        background-color: #2d2d2d;
+        border-radius: 30px;
+        color: #fff;
+        font-size: 14px;
+        width: 90%;
+        margin: 0 auto;
+        /* Add border */
+        position: relative;
+        border: 5px solid transparent;
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.2);
+        animation: glowBorder 2s infinite alternate;
+      }
+
+      .bottom-bar .bottom-bar-content {
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
+        padding: 20px;
+        align-items: center;
+      }
+
+      .bottom-bar .bottom-bar-content span {
+        color: white;
+        font-weight: bold;
+        font-family: 'Poppins';
+        font-size: 20px;
+        animation: glow 1s ease-in-out infinite;
+      }
+
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 10px #cd10ff, 0 0 20px #9f06ff;
+        }
+        50% {
+          text-shadow: 0 0 15px #cd10ff, 0 0 30px #9f06ff;
+        }
+        100% {
+          text-shadow: 0 0 10px #cd10ff, 0 0 20px #9f06ff;
+        }
+      }
+
+      .bottom-bar .btn-join-now {
+        padding: 12px 24px;
+        background: #9f06ff;
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.1s ease;
+      }
+
+      .bottom-bar .btn-join-now:hover {
+        background-color: #cc00ff; /* Choose a more contrasting hover color */
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle box-shadow */
+      }
+
+      .bottom-bar .btn-join-now a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .bottom-bar .btn-join-now a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .bottom-bar .bottom-bar-content span {
+          font-size: 16px;
+        }
+
+        .bottom-bar .btn-join-now {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .bottom-bar .bottom-bar-content {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .bottom-bar .bottom-bar-content span {
+          font-size: 14px;
+        }
+
+        .bottom-bar .btn-join-now {
+          padding: 8px 16px;
+          font-size: 12px;
+        }
+      }
+
+      /* Glowing border animation */
+     @keyframes glowBorder{
+			0% {
+				box-shadow: 0 0 5px #9f06ff, 0 0 10px #9f06ff, 0 0 15px #9f06ff, 0 0 20px #9f06ff;
+			}
+			100% {
+				box-shadow: 0 0 10px #9f06ff, 0 0 15px #9f06ff, 0 0 30px #9f06ff, 0 0 40px #9f06ff;
+			}
+		}
+    </style>
+  </head>
+  <body>
+    <!-- Bottom Bar Component -->
+    <div class="bottom-bar">
+      <div class="bottom-bar-content">
+        <span>New DevOps Course Batch starts 10 August 2024</span>
+        <button class="btn-join-now">
+          <a href="https://www.clouddevopshub.com/courses/Multi-Cloud%20with%20AWS%20DevOps%20Program:%20Realtime%20(Batch%2037)%20All-in-One%20Course-65f70221bbd7bc36420cdccc" target="_blank">Join Now</a>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

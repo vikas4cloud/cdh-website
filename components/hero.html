@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hero Section</title>
+<link
+href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+rel="stylesheet"
+/>
+</head>
+<body>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+			font-family: "Montserrat", sans-serif;
+			background-color: #020202;
+			color: white;
+		}
+
+		.hero {
+			padding: 10px; /* Reduced padding */
+			text-align: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			z-index: -1;
+		}
+
+		.hero-top-text {
+			background-color: rgba(72, 69, 210, 0.25);
+			color: orange;
+			padding: 5px 15px; /* Reduced padding */
+			border-radius: 25px;
+			font-size: 1em; /* Reduced font size */
+			margin-bottom: 10px; /* Reduced margin */
+			font-weight: bold;
+			animation: glow 1.5s infinite alternate;
+			margin-left: 20px; /* Added left margin */
+			margin-right: 20px; /* Added right margin */
+		}
+
+		@keyframes glow {
+			0% {
+				box-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 15px orange, 0 0 20px orange;
+			}
+			100% {
+				box-shadow: 0 0 20px orange, 0 0 30px orange, 0 0 40px orange, 0 0 50px orange;
+			}
+		}
+
+
+		.hero-content {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.left-section {
+			flex: 1;
+			padding: 10px; /* Reduced padding */
+			text-align: left;
+			margin-left: 100px;
+		}
+
+		.left-section h1 {
+			font-size: 2.5em; /* Reduced font size */
+			line-height: 1.1;
+		}
+
+		.join-text {
+			margin-top: 5px; /* Reduced margin */
+			font-size: 1em; /* Reduced font size */
+			color: white;
+			margin-left: 10px; /* Reduced margin */
+		}
+
+		.button-group {
+			margin-top: 10px; /* Reduced margin */
+		}
+
+		.btn {
+			padding: 8px 16px; /* Reduced padding */
+			border: none;
+			border-radius: 25px;
+			cursor: pointer;
+			font-size: 0.9em; /* Reduced font size */
+			margin-right: 10px; /* Reduced margin */
+			font-family: Montserrat, sans-serif;
+		}
+
+		.btn:hover {
+			background-color: #8005cc;
+		}
+
+		.primary {
+			background-color: #9f06ff;
+			color: white;
+		}
+
+		.right-section {
+			flex: 1;
+			padding: 10px; /* Reduced padding */
+			text-align: center;
+		}
+
+		.carousel {
+			position: relative;
+			width: 300px; /* Reduced width */
+			height: 300px; /* Reduced height */
+			margin: 0 auto;
+			overflow: hidden; /* Hide images that go beyond the container */
+			border: 5px solid #9f06ff; /* Add border with color #9f06ff */
+		}
+
+		.carousel-item {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			transition: transform 0.5s ease-in-out;
+		}
+
+		.carousel-img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.placeholder-container {
+			display: flex;
+			align-items: center;
+		}
+
+		/* Breakpoint for small screens (e.g., mobile phones in landscape or small tablets) */
+		@media (max-width: 768px) {
+			.hero-content {
+				flex-direction: column;
+			}
+
+			.left-section {
+				text-align: center;
+				margin-left: 0px;
+			}
+
+			.left-section h1 {
+				font-size: 1.8em; /* Reduced font size */
+			}
+
+			.carousel {
+				width: 300px;
+				height: 300px;
+			}
+
+			.carousel-img {
+				width: 100%;
+				height: auto;
+			}
+
+			.placeholder-container {
+				flex-direction: column;
+				margin-top: 10px;
+			}
+		}
+
+		/* Breakpoint for larger screens (e.g., tablets in landscape or small desktops) */
+		@media (max-width: 1200px) {
+			.left-section h1 {
+				font-size: 2.5em; /* Reduced font size */
+			}
+		}
+		@media (min-width: 1400px) {
+			.hero {
+				padding-left: 150px; /* Reduced padding */
+				padding-right: 150px; /* Reduced padding */
+			}
+		}
+
+		/* Breakpoint for medium-sized screens (e.g., tablets and small laptops) */
+		@media (max-width: 992px) {
+			.left-section h1 {
+				font-size: 2em; /* Reduced font size */
+			}
+		}
+
+		/* Breakpoint for very small screens (e.g., mobile phones in portrait) */
+		@media (max-width: 576px) {
+			.left-section {
+				text-align: center;
+				margin-left: 0px;
+			}
+			.left-section h1 {
+				font-size: 1.3em; /* Reduced font size */
+			}
+			.hero-top-text {
+				font-size: 0.8rem; /* Reduced font size */
+			}
+			.button-group {
+				width: 100%;
+				align-items: center;
+			}
+		}
+
+		.sphere-container {
+			position: relative;
+			display: flex;
+			gap: 0; /* Remove the gap between spheres */
+		}
+
+		.sphere {
+			position: relative;
+			width: 40px; /* Reduced sphere size */
+			height: 40px; /* Reduced sphere size */
+			background-color: #9f06ff;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Adjusted shadow */
+			transition: transform 0.3s ease;
+			z-index: 1; /* Make sure the sphere is properly stacked */
+			margin-left: -15px; /* Adjusted margin for overlap */
+		}
+
+		.sphere:first-child {
+			margin-left: 0; /* Ensure the first sphere is not pushed left */
+		}
+
+		.sphere img {
+			border-radius: 50%;
+			padding: 1px; /* Reduced padding */
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+
+		.sphere:hover {
+			transform: scale(1.1); /* Adjusted scale */
+			z-index: 2; /* Bring the hovered sphere to the front */
+		}
+
+		.tooltip {
+			position: absolute;
+			top: -40px; /* Position above the sphere */
+			left: 50%;
+			transform: translateX(-50%) translateY(0); /* Initial tooltip position */
+			padding: 5px 10px; /* Reduced padding */
+			background-color: #020202;
+			color: white;
+			border: 2px solid #9f06ff;
+			border-radius: 10px;
+			font-size: 12px; /* Reduced font size */
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+			z-index: 3; /* Ensure the tooltip appears above everything */
+		}
+
+		.sphere:hover .tooltip {
+			visibility: visible;
+			opacity: 1;
+			animation: bounce 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+				forwards; /* Bounce animation with spring effect */
+		}
+
+		/* Keyframes for combined vertical and horizontal bounce effect */
+		@keyframes bounce {
+			0% {
+				transform: translateX(-50%) translateY(0);
+			}
+			20% {
+				transform: translateX(-45%) translateY(-8px); /* Move slightly to the right and up */
+			}
+			40% {
+				transform: translateX(-48%) translateY(-4px); /* Move left slightly and down */
+			}
+			60% {
+				transform: translateX(-52%) translateY(-12px); /* Move right and further up */
+			}
+			80% {
+				transform: translateX(-50%) translateY(-6px); /* Return closer to center */
+			}
+			100% {
+				transform: translateX(-50%) translateY(-8px); /* Final position */
+			}
+		}
+	</style>
+	<section class="hero">
+		<div class="hero-top-text">
+			Are you ready to upskill for the 2024 job market?
+		</div>
+
+		<div class="hero-content">
+			<div class="left-section">
+				<h1>
+					2.5 Months Live, <br />
+					100% Real-Time <br />
+					Multi-Cloud & <br />
+					DevOps Bootcamp <br />
+					with Placement!
+				</h1>
+				<div class="placeholder-container">
+					<div class="sphere-container">
+						<div class="sphere" data-name="Student 1">
+							<img
+								src="../assets/student1.jpeg"
+								alt="Student 1"
+							/>
+							<div class="tooltip">Student</div>
+						</div>
+						<div class="sphere" data-name="Student 2">
+							<img
+								src="../assets/student2.jpeg"
+								alt="Student 2"
+							/>
+							<div class="tooltip">Student</div>
+						</div>
+						<div class="sphere" data-name="Student 3">
+							<img
+								src="../assets/student3.jpeg"
+								alt="Student 3"
+							/>
+							<div class="tooltip">Student</div>
+						</div>
+						<div class="sphere" data-name="Student 4">
+							<img
+								src="../assets/student4.jpeg"
+								alt="Student 4"
+							/>
+							<div class="tooltip">Student</div>
+						</div>
+						<div class="sphere" data-name="Student 5">
+							<img
+								src="../assets/student5.jpg"
+								alt="Student 5"
+							/>
+							<div class="tooltip">Student</div>
+						</div>
+						<script>
+							document
+								.querySelectorAll(".sphere")
+								.forEach((sphere) => {
+									sphere.addEventListener(
+										"mouseenter",
+										function () {
+											const tooltip =
+												this.querySelector(
+													".tooltip"
+												)
+											tooltip.style.animation = "none" // Reset animation
+
+											setTimeout(() => {
+												tooltip.style.animation =
+													"bounce 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards"
+											}, 10) // Small delay to restart the animation smoothly
+										}
+									)
+								})
+						</script>
+					</div>
+					<p class="join-text">
+						Join over
+						<span style="color: #9f06ff">4000+</span>
+						students
+					</p>
+				</div>
+				<div class="button-group">
+					<button class="btn primary">Introduction Video</button>
+					<a href="https://www.clouddevopshub.com/courses/Multi-Cloud%20with%20AWS%20DevOps%20Program:%20Realtime%20(Batch%2037)%20All-in-One%20Course-65f70221bbd7bc36420cdccc" target="_blank"><button class="btn primary">Join Now</button></a>
+				</div>
+			</div>
+
+			<div class="right-section">
+				<div class="carousel">
+					<div class="carousel-item" style="transform: translateX(0%)">
+						<img
+							src="../assets/1.png"
+							alt="Image 1"
+							class="carousel-img"
+						/>
+					</div>
+					<div class="carousel-item" style="transform: translateX(100%)">
+						<img
+							src="../assets/2.png"
+							alt="Image 2"
+							class="carousel-img"
+						/>
+					</div>
+					<div class="carousel-item" style="transform: translateX(200%)">
+						<img
+							src="../assets/3.png"
+							alt="Image 3"
+							class="carousel-img"
+						/>
+					</div>
+					<div class="carousel-item" style="transform: translateX(300%)">
+						<img
+							src="../assets/4.png"
+							alt="Image 4"
+							class="carousel-img"
+						/>
+					</div>
+					<div class="carousel-item" style="transform: translateX(400%)">
+						<img
+							src="../assets/5.png"
+							alt="Image 5"
+							class="carousel-img"
+						/>
+					</div>
+					<div class="carousel-item" style="transform: translateX(500%)">
+						<img
+							src="../assets/6.png"
+							alt="Image 6"
+							class="carousel-img"
+						/>
+					</div>
+					<div class="carousel-item" style="transform: translateX(600%)">
+						<img
+							src="../assets/7.png"
+							alt="Image 7"
+							class="carousel-img"
+						/>
+					</div>
+					<div class="carousel-item" style="transform: translateX(700%)">
+						<img
+							src="../assets/8.png"
+							alt="Image 8"
+							class="carousel-img"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<script>
+   let currentIndex = 0;
+const items = document.querySelectorAll('.carousel-item');
+const totalItems = items.length;
+
+function showItem(index) {
+    items.forEach((item, i) => {
+        item.style.transform = `translateX(${100 * (i - index)}%)`;
+    });
+}
+
+function autoSlide() {
+    currentIndex = (currentIndex + 1) % totalItems;  // Increment index, loop back to 0 if it exceeds totalItems
+    showItem(currentIndex);
+}
+
+// Initial display
+showItem(currentIndex);
+
+// Set up auto-slide every 3 seconds (you can adjust the time)
+setInterval(autoSlide, 5000);
+
+</script>
+
+
+</body>
+</html>

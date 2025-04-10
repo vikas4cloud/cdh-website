@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificate Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            background: black;
+            color: white;
+            padding: 10px; /* Reduced padding */
+            margin: 0;
+        }
+
+        .certificate-section {
+            max-width: 1000px; /* Reduced max-width */
+            margin: 0 auto;
+            background: black;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 15px; /* Reduced padding */
+        }
+
+        .certificate-section img {
+            width: 40%; /* Adjust image to take 40% of the section */
+            height: auto;
+        }
+
+        .certificate-content {
+            flex: 1;
+            padding-left: 20px; /* Add some space between image and content */
+        }
+
+        .certificate-content h2 {
+            font-size: 1.8em; /* Reduced font size */
+            color: #d866ff;
+            margin-bottom: 15px; /* Reduced margin */
+        }
+
+        .certificate-content p {
+            font-size: 1em; /* Reduced font size */
+            color: #ccc;
+            line-height: 1.5; /* Reduced line height */
+            margin-bottom: 15px; /* Reduced margin */
+        }
+
+        .certificate-content a {
+            display: inline-block;
+            padding: 10px 20px; /* Reduced padding */
+            background-color: #9f06ff;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .certificate-content a:hover {
+            background-color: #d866ff;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .certificate-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .certificate-section img {
+                width: 100%; /* Full width image for mobile */
+                margin-bottom: 10px; /* Reduced margin */
+            }
+
+            .certificate-content {
+                padding-left: 0; /* Remove padding on mobile */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="certificate-section">
+        <img src="../assets/certificate.jpg" alt="Certificate Vector">
+        <div class="certificate-content">
+            <h2>After learning, get a certificate</h2>
+            <p>
+                Showcase your newly acquired skills with a professional certificate.
+                Our courses ensure you gain hands-on experience and validation that can be
+                shared with employers or on platforms like LinkedIn.
+            </p>
+            <a href="#get-started">Get Your Certificate</a>
+        </div>
+    </section>
+
+</body>
+
+</html>
